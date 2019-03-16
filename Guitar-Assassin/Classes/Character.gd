@@ -1,8 +1,4 @@
-#	Character class
-#	To inherit or use this class:
-#	extends res://Classes/Character.gd
-#	var Character = load("res://path/to/character.gd")
-#	var character_node = Character.new()
+# Tutorial comes from: http://kidscancode.org/blog/2018/01/godot3_inheritance/
 
 extends Area2D
 
