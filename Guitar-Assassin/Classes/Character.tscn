@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=2]
+[gd_scene load_steps=13 format=2]
 
 [ext_resource path="res://Classes/Character.gd" type="Script" id=1]
 [ext_resource path="res://Assets/Sprites/ninja_m.png" type="Texture" id=2]
@@ -27,7 +27,7 @@ tracks/0/keys = {
 "values": [ 7 ]
 }
 
-[sub_resource type="Animation" id=6]
+[sub_resource type="Animation" id=3]
 
 resource_name = "idleleft"
 length = 1.0
@@ -46,7 +46,7 @@ tracks/0/keys = {
 "values": [ 10 ]
 }
 
-[sub_resource type="Animation" id=7]
+[sub_resource type="Animation" id=4]
 
 resource_name = "idleright"
 length = 1.0
@@ -65,7 +65,7 @@ tracks/0/keys = {
 "values": [ 4 ]
 }
 
-[sub_resource type="Animation" id=8]
+[sub_resource type="Animation" id=5]
 
 resource_name = "idleup"
 length = 1.0
@@ -84,7 +84,7 @@ tracks/0/keys = {
 "values": [ 1 ]
 }
 
-[sub_resource type="Animation" id=9]
+[sub_resource type="Animation" id=6]
 
 resource_name = "walkdown"
 length = 1.0
@@ -103,9 +103,8 @@ tracks/0/keys = {
 "values": [ 6, 8 ]
 }
 
-[sub_resource type="Animation" id=3]
+[sub_resource type="Animation" id=7]
 
-resource_name = "walkleft"
 length = 1.0
 loop = true
 step = 0.5
@@ -122,9 +121,8 @@ tracks/0/keys = {
 "values": [ 9, 11 ]
 }
 
-[sub_resource type="Animation" id=4]
+[sub_resource type="Animation" id=8]
 
-resource_name = "walkright"
 length = 1.0
 loop = true
 step = 0.5
@@ -141,9 +139,8 @@ tracks/0/keys = {
 "values": [ 3, 5 ]
 }
 
-[sub_resource type="Animation" id=5]
+[sub_resource type="Animation" id=9]
 
-resource_name = "walkup"
 length = 1.0
 loop = true
 step = 0.5
@@ -159,6 +156,11 @@ tracks/0/keys = {
 "update": 1,
 "values": [ 0, 2 ]
 }
+
+[sub_resource type="RectangleShape2D" id=10]
+
+custom_solver_bias = 0.0
+extents = Vector2( 10, 10 )
 
 [node name="Character" type="KinematicBody2D" index="0"]
 
@@ -190,13 +192,13 @@ playback_process_mode = 1
 playback_default_blend_time = 0.0
 playback_speed = 2.0
 anims/idledown = SubResource( 2 )
-anims/idleleft = SubResource( 6 )
-anims/idleright = SubResource( 7 )
-anims/idleup = SubResource( 8 )
-anims/walkdown = SubResource( 9 )
-anims/walkleft = SubResource( 3 )
-anims/walkright = SubResource( 4 )
-anims/walkup = SubResource( 5 )
+anims/idleleft = SubResource( 3 )
+anims/idleright = SubResource( 4 )
+anims/idleup = SubResource( 5 )
+anims/walkdown = SubResource( 6 )
+anims/walkleft = SubResource( 7 )
+anims/walkright = SubResource( 8 )
+anims/walkup = SubResource( 9 )
 blend_times = [  ]
 _sections_unfolded = [ "Playback Options" ]
 
@@ -231,5 +233,21 @@ enabled = true
 exclude_parent = true
 cast_to = Vector2( 32, 0 )
 collision_mask = 1
+
+[node name="hitbox" type="Area2D" parent="." index="7"]
+
+input_pickable = true
+gravity_vec = Vector2( 0, 1 )
+gravity = 98.0
+linear_damp = 0.1
+angular_damp = 1.0
+audio_bus_override = false
+audio_bus_name = "Master"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="hitbox" index="0"]
+
+position = Vector2( 0.0438113, 0.955805 )
+scale = Vector2( 1.4403, 1.63182 )
+shape = SubResource( 10 )
 
 

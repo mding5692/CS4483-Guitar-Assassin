@@ -44,3 +44,10 @@ func sprite_direction():
 			direction = "left"
 		Vector2(1,0):
 			direction = "right"
+
+"""func damage():
+	if hit > 0:
+		hit -= 1
+	for body in $hitbox.get_overlapping_bodies():
+		if hit == 0 and body.get("DAMAGE") != null and body.get("TYPE") != TYPE:
+	"""
