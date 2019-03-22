@@ -2,12 +2,12 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/blue_bullet.png-8841c6497740e5145aea4b0488ee2faa.stex"
+path="res://.import/red_bullet.png-961e787f4a01d88b782786e9aa45661f.stex"
 
 [deps]
 
-source_file="res://Assets/Sprites/blue_bullet.png"
-dest_files=[ "res://.import/blue_bullet.png-8841c6497740e5145aea4b0488ee2faa.stex" ]
+source_file="res://Assets/Sprites/red_bullet.png"
+dest_files=[ "res://.import/red_bullet.png-961e787f4a01d88b782786e9aa45661f.stex" ]
 
 [params]
 
