@@ -34,4 +34,5 @@ shoot1=[ Object(InputEventKey,"resource_local_to_scene":false,"resource_name":""
 
 [rendering]
 
+environment/default_clear_color=Color( 0.0643311, 0.0962896, 0.242188, 1 )
 environment/default_environment="res://default_env.tres"
