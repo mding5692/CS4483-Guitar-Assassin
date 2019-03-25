@@ -1,9 +1,10 @@
-[gd_scene load_steps=3 format=2]
+[gd_scene load_steps=4 format=2]
 
 [ext_resource path="res://Game.gd" type="Script" id=1]
 [ext_resource path="res://Classes/player.tscn" type="PackedScene" id=2]
+[ext_resource path="res://Classes/enemy_test.tscn" type="PackedScene" id=3]
 
-[node name="Game" type="Node" index="0"]
+[node name="Game" type="Node"]
 
 script = ExtResource( 1 )
 
@@ -12,5 +13,7 @@ script = ExtResource( 1 )
 position = Vector2( 240.96, 219.181 )
 
 [node name="string_container" type="Node" parent="." index="1"]
+
+[node name="enemy" parent="." index="2" instance=ExtResource( 3 )]
 
 
