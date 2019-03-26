@@ -100,3 +100,4 @@ func set_bullet(bullet):
 	bullet.bullet_start_position($weapon_muzzle.global_position, $weapon_muzzle.rotation)
 	get_parent().add_child(bullet)
 
+

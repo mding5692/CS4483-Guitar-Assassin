@@ -43,7 +43,7 @@ func character_movement():
 	else:
 		motion = bounce_direction.normalized() * SPEED * 1.5
 	move_and_slide(motion, Vector2(0,0))
-	
+
 func sprite_direction():
 	match move_direction:
 		Vector2(0,-1):
