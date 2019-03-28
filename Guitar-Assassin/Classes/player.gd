@@ -1,11 +1,16 @@
 extends "res://Classes/Character.gd"
 
-const TYPE = "player"
 const SPEED = 50
+const DAMAGE = 1
 
-onready var bullet = preload("res://Classes/bullet.tscn")
+onready var blue_bullet = preload("res://Classes/Bullets/blue_bullet.tscn")
+onready var red_bullet = preload("res://Classes/Bullets/red_bullet.tscn")
+onready var yellow_bullet = preload("res://Classes/Bullets/yellow_bullet.tscn")
+onready var green_bullet = preload("res://Classes/Bullets/green_bullet.tscn")
+onready var enemy = preload("res://Classes/Enemy.tscn")
 
 var health = 100
+var bounce_dir = Vector2(0,0)
 var string1_ability = false
 var string2_ability = false
 var string3_ability = false
@@ -16,7 +21,16 @@ func _process(delta):
 	character_movement()
 	sprite_direction()
 	if Input.is_action_just_pressed("shoot1"):
-		shoot()
+		shoot("1")
+	elif Input.is_action_just_pressed("shoot2"):
+		shoot("2")
+	elif Input.is_action_just_pressed("shoot3"):
+		shoot("3")
+	elif Input.is_action_just_pressed("shoot4"):
+		shoot("4")
+
+func _physics_process(delta):
+	damage(delta)
 
 func key_controls():
 	var LEFT	= Input.is_action_pressed("ui_left")
@@ -67,9 +81,23 @@ func set_attack_ability(g_string):
 		"string4":
 			string4_ability = true
 
-#TODO: shoot the correct attack based on string abilities
-func shoot():
-	if string1_ability == true:
-		var b = bullet.instance()
-		b.bullet_start_position($weapon_muzzle.global_position, $weapon_muzzle.rotation)
-		get_parent().add_child(b)
+#shoot the correct attack based on string abilities
+func shoot(str_num):
+	if string1_ability == true and str_num == "1":
+		var b = blue_bullet.instance()
+		set_bullet(b)
+	elif string2_ability == true and str_num == "2":
+		var b = red_bullet.instance()
+		set_bullet(b)
+	elif string3_ability == true and str_num == "3":
+		var b = yellow_bullet.instance()
+		set_bullet(b)
+	elif string4_ability == true and str_num == "4":
+		var b = green_bullet.instance()
+		set_bullet(b)
+
+func set_bullet(bullet):
+	bullet.bullet_start_position($weapon_muzzle.global_position, $weapon_muzzle.rotation)
+	get_parent().add_child(bullet)
+
+
