@@ -11,7 +11,7 @@ config_version=3
 [application]
 
 config/name="Guitar-Assassin"
-run/main_scene="res://Classes/Enemy.tscn"
+run/main_scene="res://Game.tscn"
 config/icon="res://icon.png"
 
 [display]
