@@ -5,7 +5,7 @@
 [ext_resource path="res://Classes/Enemy.tscn" type="PackedScene" id=3]
 [ext_resource path="res://DialogBox.gd" type="Script" id=4]
 
-[node name="Game" type="Node" index="0"]
+[node name="Game" type="Node"]
 
 script = ExtResource( 1 )
 _sections_unfolded = [ "Pause" ]
@@ -19,6 +19,8 @@ position = Vector2( 240.96, 219.181 )
 _sections_unfolded = [ "Collision", "Transform", "Visibility" ]
 
 [node name="Enemy" parent="." index="1" instance=ExtResource( 3 )]
+
+position = Vector2( 54.749, 48.0723 )
 
 [node name="string_container" type="Node" parent="." index="2"]
 
@@ -82,5 +84,6 @@ script = ExtResource( 4 )
 _sections_unfolded = [ "BBCode", "Pause" ]
 
 [connection signal="timeout" from="Polygon2D/Timer" to="RichTextLabel" method="_on_Timer_timeout"]
+[node name="Sprite" type="Sprite" parent="." index="2"]
 
 
