@@ -12,6 +12,7 @@ func _ready():
 	set_visible_characters(0) 		# hide text at start
 	set_process_input(true) 		# enable user input
 
+	
 func _input(event):
 	if event is InputEventKey and event.get_scancode() == KEY_SPACE:
 		if event.is_pressed():
