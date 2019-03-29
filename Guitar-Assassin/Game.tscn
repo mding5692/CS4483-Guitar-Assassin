@@ -1,25 +1,86 @@
-[gd_scene load_steps=4 format=2]
+[gd_scene load_steps=5 format=2]
 
 [ext_resource path="res://Game.gd" type="Script" id=1]
 [ext_resource path="res://Classes/player.tscn" type="PackedScene" id=2]
 [ext_resource path="res://Classes/Enemy.tscn" type="PackedScene" id=3]
+[ext_resource path="res://DialogBox.gd" type="Script" id=4]
 
-[node name="Game" type="Node"]
+[node name="Game" type="Node" index="0"]
 
 script = ExtResource( 1 )
+_sections_unfolded = [ "Pause" ]
+__meta__ = {
+"_edit_vertical_guides_": [  ]
+}
 
 [node name="player" parent="." index="0" instance=ExtResource( 2 )]
 
 position = Vector2( 240.96, 219.181 )
+_sections_unfolded = [ "Collision", "Transform", "Visibility" ]
 
 [node name="Enemy" parent="." index="1" instance=ExtResource( 3 )]
-
-position = Vector2( 54.749, 48.0723 )
 
 [node name="string_container" type="Node" parent="." index="2"]
 
 [node name="string_container" type="Node" parent="." index="3"]
 
-[node name="Sprite" type="Sprite" parent="." index="2"]
+[node name="Polygon2D" type="Polygon2D" parent="." index="4"]
+
+position = Vector2( 17.0667, -96 )
+scale = Vector2( 0.466667, 1 )
+polygon = PoolVector2Array( 32, 576, 32, 464, 992, 464, 992, 576 )
+uv = PoolVector2Array(  )
+color = Color( 0.191406, 0.189911, 0.189911, 1 )
+vertex_colors = PoolColorArray(  )
+offset = Vector2( 0, 0 )
+antialiased = false
+texture = null
+texture_offset = Vector2( 0, 0 )
+texture_scale = Vector2( 1, 1 )
+texture_rotation_degrees = 0.0
+invert_enable = false
+invert_border = 100.0
+_sections_unfolded = [ "Texture", "Transform", "Z Index" ]
+
+[node name="Timer" type="Timer" parent="Polygon2D" index="0"]
+
+process_mode = 1
+wait_time = 0.05
+one_shot = false
+autostart = true
+
+[node name="RichTextLabel" type="RichTextLabel" parent="." index="5"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 64.0
+margin_top = 400.0
+margin_right = 448.0
+margin_bottom = 449.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = true
+mouse_filter = 0
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 1
+bbcode_enabled = false
+bbcode_text = "Hello Guitar Assassin, welcome!
+"
+visible_characters = -1
+percent_visible = 1.0
+meta_underlined = true
+tab_size = 4
+text = "Hello Guitar Assassin, welcome!
+"
+scroll_active = true
+scroll_following = false
+selection_enabled = false
+override_selected_font_color = false
+script = ExtResource( 4 )
+_sections_unfolded = [ "BBCode", "Pause" ]
+
+[connection signal="timeout" from="Polygon2D/Timer" to="RichTextLabel" method="_on_Timer_timeout"]
 
 
