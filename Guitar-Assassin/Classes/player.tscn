@@ -174,7 +174,7 @@ script = ExtResource( 1 )
 texture = ExtResource( 2 )
 vframes = 4
 hframes = 3
-frame = 9
+frame = 6
 _sections_unfolded = [ "Animation" ]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." index="1"]
@@ -199,5 +199,6 @@ anims/walkleft = SubResource( 7 )
 anims/walkright = SubResource( 8 )
 anims/walkup = SubResource( 9 )
 blend_times = [  ]
+_sections_unfolded = [ "Playback Options" ]
 
 

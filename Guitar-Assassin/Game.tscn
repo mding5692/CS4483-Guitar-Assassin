@@ -15,4 +15,6 @@ _sections_unfolded = [ "Collision" ]
 
 [node name="player" parent="." index="1" instance=ExtResource( 3 )]
 
+[node name="Sprite" type="Sprite" parent="." index="2"]
+
 
