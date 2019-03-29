@@ -1,11 +1,15 @@
 extends "res://Classes/Character.gd"
 
+const SPEED = 40
+var enemy_moves = [Vector2(1,0), Vector2(-1,0), Vector2(0, -1), Vector2(0,1)]
+
 func _ready():
 	randomize()
-	direction = moves.keys()[randi() % 4]
 
 func _process(delta):
-	if can_move:
-		if not move(direction) or randi() % 10 > 5:
-			direction = moves.keys()[randi() % 4]
-			
+	enemy_movement()
+	character_movement()
+	sprite_direction()
+
+func enemy_movement():
+	move_direction = enemy_moves[randi() % 4]

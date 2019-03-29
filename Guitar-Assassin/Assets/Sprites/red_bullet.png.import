@@ -2,12 +2,12 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/mage_m.png-608a7c66220ef8de1cc68f982f44b4ed.stex"
+path="res://.import/red_bullet.png-961e787f4a01d88b782786e9aa45661f.stex"
 
 [deps]
 
-source_file="res://Assets/Sprites/mage_m.png"
-dest_files=[ "res://.import/mage_m.png-608a7c66220ef8de1cc68f982f44b4ed.stex" ]
+source_file="res://Assets/Sprites/red_bullet.png"
+dest_files=[ "res://.import/red_bullet.png-961e787f4a01d88b782786e9aa45661f.stex" ]
 
 [params]
 
