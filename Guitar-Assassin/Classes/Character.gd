@@ -2,9 +2,8 @@
 
 extends KinematicBody2D
 
-const TYPE = "PLAYER"
+
 var tile_size = 32
-var can_move = true
 var move_direction = Vector2(0,0)
 var bounce_direction = Vector2(0,0)
 var direction = 'right'
@@ -15,7 +14,7 @@ var raycasts = { 'right': 'RayCastRight', 'left': 'RayCastLeft', 'up': 'RayCastU
 
 # Character-specific variables:
 var hp = 100
-const SPEED = 0
+var speed = 40
 
 func use_ability():
 	pass
@@ -23,9 +22,9 @@ func use_ability():
 func character_movement():
 	var motion
 	if hit_timer == HIT_TIMER_MAX:
-		motion = move_direction.normalized() * SPEED
+		motion = move_direction.normalized() * speed
 	else:
-		motion = bounce_direction.normalized() * SPEED * 1.5
+		motion = bounce_direction.normalized() * speed * 1.5
 	move_and_slide(motion, Vector2(0,0))
 
 func sprite_direction():
@@ -49,7 +48,7 @@ func damage(delta):
 			hit = 10
 			bounce_direction = transform.origin - body.transform.origin
 	"""
-	var collision = move_and_collide(move_direction.normalized() * delta * SPEED)
+	var collision = move_and_collide(move_direction.normalized() * delta * speed)
 	if collision:
 		if hit_timer >= HIT_TIMER_MAX:
 			hp -= 1

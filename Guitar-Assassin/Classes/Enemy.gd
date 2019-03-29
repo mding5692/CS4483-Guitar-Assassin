@@ -1,6 +1,7 @@
 extends "res://Classes/Character.gd"
 
-const SPEED = 30
+# Gonkee's follow AI for Godot 3 - full tutorial https://youtu.be/WXC8eBCEbho <== used this for AI for inspiration
+
 const TYPE = "ENEMY"
 var enemy_moves = {'up': Vector2(0,-1), 'right': Vector2(1,0), 'left': Vector2(-1,0), 'down': Vector2(0,1)}
 const animation = "walk"
@@ -10,6 +11,7 @@ var movetimer_length = 15
 var movetimer = 0
 
 func _ready():
+	speed = 30
 	randomize()
 
 func _process(delta):
