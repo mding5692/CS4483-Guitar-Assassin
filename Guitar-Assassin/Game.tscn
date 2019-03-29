@@ -4,7 +4,7 @@
 [ext_resource path="res://Classes/player.tscn" type="PackedScene" id=2]
 [ext_resource path="res://Classes/Enemy.tscn" type="PackedScene" id=3]
 
-[node name="Game" type="Node" index="0"]
+[node name="Game" type="Node"]
 
 script = ExtResource( 1 )
 
@@ -13,6 +13,8 @@ script = ExtResource( 1 )
 position = Vector2( 240.96, 219.181 )
 
 [node name="Enemy" parent="." index="1" instance=ExtResource( 3 )]
+
+position = Vector2( 54.749, 48.0723 )
 
 [node name="string_container" type="Node" parent="." index="2"]
 
