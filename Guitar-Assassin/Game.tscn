@@ -1,9 +1,10 @@
-[gd_scene load_steps=5 format=2]
+[gd_scene load_steps=6 format=2]
 
 [ext_resource path="res://Game.gd" type="Script" id=1]
 [ext_resource path="res://Classes/player.tscn" type="PackedScene" id=2]
-[ext_resource path="res://DialogBox.gd" type="Script" id=3]
-[ext_resource path="res://Assets/wall.tres" type="TileSet" id=4]
+[ext_resource path="res://Classes/Enemy.tscn" type="PackedScene" id=3]
+[ext_resource path="res://DialogBox.gd" type="Script" id=4]
+[ext_resource path="res://Assets/wall.tres" type="TileSet" id=5]
 
 [node name="Game" type="Node" index="0"]
 
@@ -15,9 +16,11 @@ _sections_unfolded = [ "Pause" ]
 position = Vector2( 240.96, 219.181 )
 _sections_unfolded = [ "Collision", "Transform", "Visibility" ]
 
-[node name="string_container" type="Node" parent="." index="1"]
+[node name="enemy_one" parent="." index="1" instance=ExtResource( 3 )]
 
-[node name="Polygon2D" type="Polygon2D" parent="." index="2"]
+[node name="string_container" type="Node" parent="." index="2"]
+
+[node name="Polygon2D" type="Polygon2D" parent="." index="3"]
 
 position = Vector2( 17.0667, -96 )
 scale = Vector2( 0.466667, 1 )
@@ -42,7 +45,7 @@ wait_time = 0.05
 one_shot = false
 autostart = true
 
-[node name="RichTextLabel" type="RichTextLabel" parent="." index="3"]
+[node name="RichTextLabel" type="RichTextLabel" parent="." index="4"]
 
 anchor_left = 0.0
 anchor_top = 0.0
@@ -71,17 +74,17 @@ scroll_active = true
 scroll_following = false
 selection_enabled = false
 override_selected_font_color = false
-script = ExtResource( 3 )
+script = ExtResource( 4 )
 _sections_unfolded = [ "BBCode", "Pause" ]
 
-[node name="string_container" type="Node" parent="." index="4"]
+[node name="string_container" type="Node" parent="." index="5"]
 
-[node name="Node" type="Node" parent="." index="5"]
+[node name="Node" type="Node" parent="." index="6"]
 
 [node name="TileMap" type="TileMap" parent="Node" index="0"]
 
 mode = 0
-tile_set = ExtResource( 4 )
+tile_set = ExtResource( 5 )
 cell_size = Vector2( 16, 16 )
 cell_quadrant_size = 16
 cell_custom_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
