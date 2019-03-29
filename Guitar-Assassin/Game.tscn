@@ -20,4 +20,6 @@ position = Vector2( 54.749, 48.0723 )
 
 [node name="string_container" type="Node" parent="." index="3"]
 
+[node name="Sprite" type="Sprite" parent="." index="2"]
+
 

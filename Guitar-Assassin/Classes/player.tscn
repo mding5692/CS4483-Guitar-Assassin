@@ -180,7 +180,7 @@ _sections_unfolded = [ "Collision", "Visibility" ]
 texture = ExtResource( 2 )
 vframes = 4
 hframes = 3
-frame = 5
+frame = 6
 _sections_unfolded = [ "Animation" ]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." index="1"]
