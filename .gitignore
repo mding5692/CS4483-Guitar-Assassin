@@ -4,5 +4,7 @@
 export.cfg
 export_presets.cfg
 
+.DS_Store
+
 # Mono-specific ignores
 .mono/
