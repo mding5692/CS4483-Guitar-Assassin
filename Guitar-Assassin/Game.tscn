@@ -53,7 +53,7 @@ bbcode_text = "Hello Guitar Assassin, welcome!
 "
 text = "Hello Guitar Assassin, welcome!
 "
-script = ExtResource( 5 )
+script = ExtResource( 6 )
 
 [node name="Polygon2D" type="Polygon2D" parent="Dialog_Box"]
 position = Vector2( 11.6978, -128 )
