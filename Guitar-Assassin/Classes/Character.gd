@@ -1,5 +1,3 @@
-# Tutorial comes from: http://kidscancode.org/blog/2018/01/godot3_inheritance/
-
 extends KinematicBody2D
 
 
