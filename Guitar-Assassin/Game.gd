@@ -12,6 +12,11 @@ func _ready():
 	OS.set_window_size(Vector2(712, 512))
 	spawn_strings()
 	
+	var player = AudioStreamPlayer.new()
+	self.add_child(player)
+	player.stream = load("res://Assets/game music/backgroundmusic/ExploringMap.wav")
+	player.play()
+	
 
 func spawn_strings():
 	var s1 = string1.instance()
