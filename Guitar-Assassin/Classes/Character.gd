@@ -11,7 +11,7 @@ var collision_state = false
 var raycasts = { 'right': 'RayCastRight', 'left': 'RayCastLeft', 'up': 'RayCastUp', 'down': 'RayCastDown' }
 
 # Character-specific variables:
-var hp = 100
+var hp = 5
 var speed = 40
 
 func use_ability():
