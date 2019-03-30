@@ -1,7 +1,5 @@
 extends "res://Classes/Character.gd"
 
-# Gonkee's follow AI for Godot 3 - full tutorial https://youtu.be/WXC8eBCEbho <== used this for AI for inspiration
-
 const TYPE = "ENEMY"
 var enemy_moves = {'up': Vector2(0,-1), 'right': Vector2(1,0), 'left': Vector2(-1,0), 'down': Vector2(0,1)}
 const animation = "walk"
@@ -31,10 +29,16 @@ func _process(delta):
 			movetimer = movetimer_length
 
 func change_to_player_direction():
-	for i in range(0, enemy_moves.values().size()):
-		if move_direction == enemy_moves.values()[i]:
-			direction = enemy_moves.keys()[i]
-			break
+	if move_direction.x < 0:
+		direction = 'left'
+	elif move_direction.x > 0:
+		direction = 'right'
+		
+	if move_direction.y < 0:
+		direction = 'up'
+	elif move_direction.y > 0:
+		direction = 'down'
+
 	enemy_animation()
 
 func change_enemy_direction():
