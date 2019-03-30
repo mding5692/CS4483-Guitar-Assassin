@@ -20,6 +20,7 @@ func _process(delta):
 	character_movement()
 	if sees_player: # pursues player if they see the player
 		move_direction = (player_target.global_position - self.global_position).normalized()
+#		print(move_direction)
 		change_to_player_direction()
 	else: # else do random movement
 		if movetimer > 0:
@@ -38,7 +39,7 @@ func change_to_player_direction():
 		direction = 'up'
 	elif move_direction.y > 0:
 		direction = 'down'
-
+		
 	enemy_animation()
 
 func change_enemy_direction():
