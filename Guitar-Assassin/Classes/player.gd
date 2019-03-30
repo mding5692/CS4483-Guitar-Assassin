@@ -83,16 +83,33 @@ func set_attack_ability(g_string):
 
 #shoot the correct attack based on string abilities
 func shoot(str_num):
+	var string1 = AudioStreamPlayer.new()
+	var string2 = AudioStreamPlayer.new()
+	var string3 = AudioStreamPlayer.new()
+	var string4 = AudioStreamPlayer.new()
+	self.add_child(string1)
+	self.add_child(string2)
+	self.add_child(string3)
+	self.add_child(string4)
+	string1.stream = load("res://Assets/game music/effects/Waving Torch.wav")
+	string2.stream = load("res://Assets/game music/effects/battle_sound_effects_0/battle_sound_effects/Bow.wav")
+	string3.stream = load("res://Assets/game music/effects/battle_sound_effects_0/battle_sound_effects/swish_3.wav")
+	string4.stream = load("res://Assets/game music/effects/battle_sound_effects_0/battle_sound_effects/swish_2.wav")
+	
 	if string1_ability == true and str_num == "1":
+		string1.play()
 		var b = blue_bullet.instance()
 		set_bullet(b)
 	elif string2_ability == true and str_num == "2":
+		string2.play()
 		var b = red_bullet.instance()
 		set_bullet(b)
 	elif string3_ability == true and str_num == "3":
+		string3.play()
 		var b = yellow_bullet.instance()
 		set_bullet(b)
 	elif string4_ability == true and str_num == "4":
+		string4.play()
 		var b = green_bullet.instance()
 		set_bullet(b)
 

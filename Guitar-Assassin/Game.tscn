@@ -1,9 +1,10 @@
-[gd_scene load_steps=5 format=2]
+[gd_scene load_steps=6 format=2]
 
 [ext_resource path="res://Game.gd" type="Script" id=1]
 [ext_resource path="res://Classes/player.tscn" type="PackedScene" id=2]
 [ext_resource path="res://Classes/Enemy.tscn" type="PackedScene" id=3]
 [ext_resource path="res://Assets/wall.tres" type="TileSet" id=4]
+[ext_resource path="res://DynamicAudio.gd" type="Script" id=5]
 
 [node name="Game" type="Node"]
 script = ExtResource( 1 )
@@ -40,4 +41,7 @@ polygon = PoolVector2Array( 32, 576, 32, 464, 957.714, 464, 992, 464, 992, 576 )
 [node name="Timer" type="Timer" parent="Node2D/Polygon2D"]
 wait_time = 0.05
 autostart = true
+
+[node name="audio_player" type="Node" parent="."]
+script = ExtResource( 5 )
 
