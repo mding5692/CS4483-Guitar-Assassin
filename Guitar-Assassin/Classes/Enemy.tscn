@@ -4,17 +4,20 @@
 [ext_resource path="res://Classes/Enemy.gd" type="Script" id=2]
 
 [node name="Enemy" index="0" instance=ExtResource( 1 )]
-
-position = Vector2( 156.028, 92.5123 )
 script = ExtResource( 2 )
 
 [node name="Sprite" parent="." index="0"]
+position = Vector2( 205.078, 92.4588 )
+frame = 7
 
-position = Vector2( -0.658264, 1.3273 )
-frame = 8
+[node name="CollisionShape2D" parent="." index="1"]
+visible = true
+position = Vector2( 205.648, 91.4811 )
 
 [node name="hitbox" parent="." index="7"]
+visible = false
+position = Vector2( 205.078, 91.0684 )
 
-position = Vector2( -0.658264, -0.0631027 )
-
+[node name="CollisionShape2D" parent="hitbox" index="0"]
+position = Vector2( -0.194027, 0.480145 )
 
