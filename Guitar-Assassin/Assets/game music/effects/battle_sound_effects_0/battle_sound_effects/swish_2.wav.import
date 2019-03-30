@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/swish_2.wav-624a470db0b14a28ea3d6d97fa2c916f.sample"
+
+[deps]
+
+source_file="res://Assets/game music/effects/battle_sound_effects_0/battle_sound_effects/swish_2.wav"
+dest_files=[ "res://.import/swish_2.wav-624a470db0b14a28ea3d6d97fa2c916f.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=true
+edit/normalize=true
+edit/loop=false
+compress/mode=0
