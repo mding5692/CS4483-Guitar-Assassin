@@ -7,7 +7,6 @@ const animation = "walk"
 # For raycasting and figuring if player is seen
 var sees_player = false
 onready var player_target = get_parent().get_node("player")
-var detect_radius = 300
 
 # For handling how much time it talks to walk
 var movetimer_length = 15
@@ -35,9 +34,9 @@ func change_to_player_direction():
 	elif move_direction.x > 0:
 		direction = 'right'
 		
-	if move_direction.y < 0:
+	if move_direction.y < 0 && move_direction.y < move_direction.x:
 		direction = 'up'
-	elif move_direction.y > 0:
+	elif move_direction.y > 0 && move_direction.y > move_direction.x:
 		direction = 'down'
 		
 	enemy_animation()
