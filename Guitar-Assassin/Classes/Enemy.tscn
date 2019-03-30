@@ -4,7 +4,7 @@
 [ext_resource path="res://Classes/Enemy.gd" type="Script" id=2]
 
 [sub_resource type="CircleShape2D" id=1]
-radius = 70.0
+radius = 120.0
 
 [node name="Enemy" index="0" instance=ExtResource( 1 )]
 script = ExtResource( 2 )
