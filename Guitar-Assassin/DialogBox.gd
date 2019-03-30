@@ -21,11 +21,10 @@ func _input(event):
 					page += 1
 					set_bbcode(dialog[page])
 					set_visible_characters(0)
-			#else:
-			#	set_visible_characters(get_total_character_count())
+			else:
+				set_visible_characters(get_total_character_count())
 
 
 
-"""
 func _on_Timer_timeout():
-	set_visible_characters(get_visible_characters()+1)"""
+	set_visible_characters(get_visible_characters()+1)
