@@ -16,7 +16,7 @@ var raycasts = { 'right': 'RayCastRight', 'left': 'RayCastLeft', 'up': 'RayCastU
 
 # Character-specific variables:
 var hp = 100
-const SPEED = 0
+const SPEED = 50
 
 
 func use_ability():
@@ -74,11 +74,10 @@ func damage(delta):
 			bounce_direction = transform.origin - colliding_body.transform.origin
 			hit_timer -= 1
 
-		print(hit_timer)
 	if hit_timer > 0 and hit_timer < HIT_TIMER_MAX:
 			hit_timer -= 1
 
 	elif hit_timer <= 0:
 		hit_timer = HIT_TIMER_MAX
 		bounce_direction = Vector2(0,0)
-		print("done")
+

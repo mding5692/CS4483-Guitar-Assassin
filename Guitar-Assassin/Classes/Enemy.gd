@@ -1,6 +1,6 @@
 extends "res://Classes/Character.gd"
 
-const SPEED = 40
+#const SPEED = 40
 var enemy_moves = [Vector2(1,0), Vector2(-1,0), Vector2(0, -1), Vector2(0,1)]
 
 func _ready():
