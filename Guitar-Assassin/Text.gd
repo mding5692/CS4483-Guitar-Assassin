@@ -3,7 +3,7 @@ extends RichTextLabel
 
 var dialog = [
 	"Hello Guitar Assassin, welcome!",
-	"Press W A S D to move around.",
+	"Press ARROW KEYS to move around.",
 	"Collect strings (abilities) by walking over them.",
 	"Once you've collected your abilities use them by pressing 1 2 3 4."
 	]
@@ -26,7 +26,6 @@ func _input(event):
 					set_bbcode(dialog[page])
 					set_visible_characters(0)
 				else:		
-					print("Function called")		
 					get_parent().hide()									# Call parent function hide to hide dialog box
 			else:														# 
 				set_visible_characters(get_total_character_count())		
