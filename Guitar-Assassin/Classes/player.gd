@@ -1,6 +1,6 @@
 extends "res://Classes/Character.gd"
 
-const SPEED = 50
+#onst SPEED = 50
 const DAMAGE = 1
 
 onready var blue_bullet = preload("res://Classes/Bullets/blue_bullet.tscn")

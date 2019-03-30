@@ -16,7 +16,7 @@ var raycasts = { 'right': 'RayCastRight', 'left': 'RayCastLeft', 'up': 'RayCastU
 
 # Character-specific variables:
 var hp = 100
-const SPEED = 0
+const SPEED = 40
 
 
 func use_ability():

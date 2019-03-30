@@ -9,7 +9,7 @@ func _ready():
 	# Called when the node is added to the scene for the first time.
 	# Initialization here
 	set_process(true)
-	OS.set_window_size(Vector2(512, 512))
+	OS.set_window_size(Vector2(712, 512))
 	spawn_strings()
 	
 
