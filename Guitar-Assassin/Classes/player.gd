@@ -1,6 +1,5 @@
 extends "res://Classes/Character.gd"
 
-#onst SPEED = 50
 const DAMAGE = 1
 
 onready var blue_bullet = preload("res://Classes/Bullets/blue_bullet.tscn")
@@ -9,12 +8,14 @@ onready var yellow_bullet = preload("res://Classes/Bullets/yellow_bullet.tscn")
 onready var green_bullet = preload("res://Classes/Bullets/green_bullet.tscn")
 onready var enemy = preload("res://Classes/Enemy.tscn")
 
-var health = 100
 var bounce_dir = Vector2(0,0)
 var string1_ability = false
 var string2_ability = false
 var string3_ability = false
 var string4_ability = false
+
+func _ready():
+	hp = 5
 
 func _process(delta):
 	key_controls()
@@ -31,6 +32,7 @@ func _process(delta):
 
 func _physics_process(delta):
 	damage(delta)
+	player_death()
 
 func key_controls():
 	var LEFT	= Input.is_action_pressed("ui_left")
@@ -100,4 +102,6 @@ func set_bullet(bullet):
 	bullet.bullet_start_position($weapon_muzzle.global_position, $weapon_muzzle.rotation)
 	get_parent().add_child(bullet)
 
-
+func player_death():
+	if hp <= 0:
+		get_tree().change_scene("res://Classes/game_over.tscn")
