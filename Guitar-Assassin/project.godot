@@ -21,8 +21,8 @@ config/icon="res://icon.png"
 
 [display]
 
-window/size/width=640
-window/size/height=480
+window/size/width=3286
+window/size/height=1377
 
 [input]
 
