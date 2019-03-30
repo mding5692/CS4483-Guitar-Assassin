@@ -1,7 +1,12 @@
 # DialogBox.gd
 extends RichTextLabel
 
-var dialog = ["Hello Guitar Assassin, welcome!", "Are you ready to begin your adventure?"]
+var dialog = [
+	"Hello Guitar Assassin, welcome!",
+	"Press W A S D to move around.",
+	"Collect strings (abilities) by walking over them.",
+	"Once you've collected your abilities use them by pressing 1 2 3 4."
+	]
 var page = 0
 
 func _ready():
@@ -20,9 +25,9 @@ func _input(event):
 					page += 1											# turn page
 					set_bbcode(dialog[page])
 					set_visible_characters(0)
-#				else:					
-#					$Dialog_Box.visible = not $Dialog_Box.visible
-
+				else:		
+					print("Function called")		
+					get_parent().hide()									# Call parent function hide to hide dialog box
 			else:														# 
 				set_visible_characters(get_total_character_count())		
 
