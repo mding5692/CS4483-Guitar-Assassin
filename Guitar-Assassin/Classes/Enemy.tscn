@@ -1,7 +1,10 @@
-[gd_scene load_steps=3 format=2]
+[gd_scene load_steps=4 format=2]
 
 [ext_resource path="res://Classes/Character.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Classes/Enemy.gd" type="Script" id=2]
+
+[sub_resource type="CircleShape2D" id=1]
+radius = 120.0
 
 [node name="Enemy" instance=ExtResource( 1 )]
 script = ExtResource( 2 )
@@ -14,10 +17,17 @@ frame = 7
 visible = true
 position = Vector2( -0.0883331, 0.349586 )
 
-[node name="hitbox" parent="." index="7"]
+[node name="Visibility" type="Area2D" parent="." index="7"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Visibility" index="0"]
+shape = SubResource( 1 )
+
+[node name="hitbox" parent="." index="8"]
 visible = false
 position = Vector2( 205.078, 91.0684 )
 
 [node name="CollisionShape2D" parent="hitbox" index="0"]
 position = Vector2( -0.194027, 0.480145 )
 
+[connection signal="body_entered" from="Visibility" to="." method="_on_Visibility_body_entered"]
+[connection signal="body_exited" from="Visibility" to="." method="_on_Visibility_body_exited"]
