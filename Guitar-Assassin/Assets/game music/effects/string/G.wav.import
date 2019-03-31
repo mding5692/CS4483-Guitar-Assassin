@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/G.wav-0ab8927e1b3fe4e0f9ea62e15d9af8ab.sample"
+
+[deps]
+
+source_file="res://Assets/game music/effects/string/G.wav"
+dest_files=[ "res://.import/G.wav-0ab8927e1b3fe4e0f9ea62e15d9af8ab.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=true
+edit/normalize=true
+edit/loop=false
+compress/mode=0
