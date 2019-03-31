@@ -10,6 +10,11 @@ var dialog = [
 var page = 0
 
 func _ready():
+	get_parent().hide()
+	pass
+	
+func start_dialog():
+	get_parent().show()
 	set_bbcode(dialog[page])
 	set_visible_characters(0) 		# hide text at start
 	set_process_input(true) 		# enable user input
