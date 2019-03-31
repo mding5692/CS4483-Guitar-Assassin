@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/E_chord.wav-1626a316e8583c58cce1595875343678.sample"
+
+[deps]
+
+source_file="res://Assets/game music/effects/string/E_chord.wav"
+dest_files=[ "res://.import/E_chord.wav-1626a316e8583c58cce1595875343678.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=true
+edit/normalize=true
+edit/loop=false
+compress/mode=0

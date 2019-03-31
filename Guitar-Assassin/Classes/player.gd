@@ -93,11 +93,15 @@ func shoot(str_num):
 	self.add_child(string2)
 	self.add_child(string3)
 	self.add_child(string4)
-	string1.stream = load("res://Assets/game music/effects/Waving Torch.wav")
-	string2.stream = load("res://Assets/game music/effects/battle_sound_effects_0/battle_sound_effects/Bow.wav")
-	string3.stream = load("res://Assets/game music/effects/battle_sound_effects_0/battle_sound_effects/swish_3.wav")
-	string4.stream = load("res://Assets/game music/effects/battle_sound_effects_0/battle_sound_effects/swish_2.wav")
+	string1.stream = load("res://Assets/game music/effects/string/C_chord.wav")
+	string2.stream = load("res://Assets/game music/effects/string/G_chord.wav")
+	string3.stream = load("res://Assets/game music/effects/string/E_chord.wav")
+	string4.stream = load("res://Assets/game music/effects/string/F_chord.wav")
 	
+	string1.volume_db = -5
+	string2.volume_db = -5
+	string3.volume_db = -5
+	string4.volume_db = -5
 	if string1_ability == true and str_num == "1":
 		string1.play()
 		var b = blue_bullet.instance()
