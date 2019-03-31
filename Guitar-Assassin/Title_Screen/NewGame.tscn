@@ -1,0 +1,52 @@
+[gd_scene load_steps=7 format=2]
+
+[ext_resource path="res://Title_Screen/NewGame.gd" type="Script" id=1]
+[ext_resource path="res://Assets/black.jpg" type="Texture" id=2]
+[ext_resource path="res://Title_Screen/Sprite.gd" type="Script" id=3]
+[ext_resource path="res://Assets/Chalkduster.ttf" type="DynamicFontData" id=4]
+
+[sub_resource type="DynamicFont" id=1]
+size = 50
+font_data = ExtResource( 4 )
+
+[sub_resource type="DynamicFont" id=2]
+size = 50
+font_data = ExtResource( 4 )
+
+[node name="NewGameScreen" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+script = ExtResource( 1 )
+
+[node name="Sprite" type="Sprite" parent="."]
+position = Vector2( 640.5, 363 )
+texture = ExtResource( 2 )
+script = ExtResource( 3 )
+
+[node name="CenterContainer" type="CenterContainer" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+
+[node name="VBoxContainer" type="VBoxContainer" parent="CenterContainer"]
+margin_left = 398.0
+margin_top = 291.0
+margin_right = 882.0
+margin_bottom = 429.0
+
+[node name="Label" type="Label" parent="CenterContainer/VBoxContainer"]
+margin_right = 484.0
+margin_bottom = 64.0
+custom_fonts/font = SubResource( 1 )
+custom_colors/font_color_shadow = Color( 0, 0, 0, 1 )
+custom_constants/shadow_offset_x = 0
+custom_constants/shadow_offset_y = 5
+text = "New Game Scene"
+
+[node name="Button" type="Button" parent="CenterContainer/VBoxContainer"]
+margin_top = 68.0
+margin_right = 484.0
+margin_bottom = 138.0
+custom_fonts/font = SubResource( 2 )
+text = "Back"
+
+[connection signal="pressed" from="CenterContainer/VBoxContainer/Button" to="." method="_on_Button_pressed"]
