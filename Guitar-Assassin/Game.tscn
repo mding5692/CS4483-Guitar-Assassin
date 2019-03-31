@@ -37,6 +37,16 @@ position = Vector2( -322.665, -213.431 )
 z_index = 1
 script = ExtResource( 5 )
 
+[node name="Polygon2D" type="Polygon2D" parent="player/Camera2D2/Dialog_Box"]
+position = Vector2( 11.6978, -128 )
+scale = Vector2( 0.601111, 1 )
+color = Color( 0.191406, 0.189911, 0.189911, 1 )
+polygon = PoolVector2Array( 32, 576, 32, 464, 992, 464, 992, 576 )
+
+[node name="Timer" type="Timer" parent="player/Camera2D2/Dialog_Box/Polygon2D"]
+wait_time = 0.05
+autostart = true
+
 [node name="Main Text" type="RichTextLabel" parent="player/Camera2D2/Dialog_Box"]
 margin_left = 64.0
 margin_top = 368.0
@@ -47,17 +57,6 @@ bbcode_text = "Hello Guitar Assassin, welcome!
 text = "Hello Guitar Assassin, welcome!
 "
 script = ExtResource( 6 )
-
-[node name="Polygon2D" type="Polygon2D" parent="player/Camera2D2/Dialog_Box"]
-position = Vector2( 11.6978, -128 )
-scale = Vector2( 0.601111, 1 )
-z_index = -1
-color = Color( 0.191406, 0.189911, 0.189911, 1 )
-polygon = PoolVector2Array( 32, 576, 32, 464, 992, 464, 992, 576 )
-
-[node name="Timer" type="Timer" parent="player/Camera2D2/Dialog_Box/Polygon2D"]
-wait_time = 0.05
-autostart = true
 
 [node name="Instructions" type="RichTextLabel" parent="player/Camera2D2/Dialog_Box"]
 margin_left = 64.0
@@ -79,6 +78,7 @@ text = "Press \"SPACE\" to continue."
 
 [node name="TileMap" type="TileMap" parent="."]
 position = Vector2( 29.3435, 2.02454 )
+z_as_relative = false
 tile_set = ExtResource( 8 )
 cell_size = Vector2( 16, 16 )
 format = 1
