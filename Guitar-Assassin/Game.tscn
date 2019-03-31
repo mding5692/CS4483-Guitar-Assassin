@@ -22,6 +22,7 @@ position = Vector2( 793.657, 450.345 )
 position = Vector2( -310.327, 319.345 )
 
 [node name="player" parent="." instance=ExtResource( 4 )]
+editor/display_folded = true
 position = Vector2( 812.681, 720 )
 
 [node name="Camera2D2" type="Camera2D" parent="player"]
@@ -77,6 +78,7 @@ text = "Press ESC to skip."
 [node name="Enemy" parent="." instance=ExtResource( 3 )]
 
 [node name="Instruction_group" type="Node2D" parent="."]
+editor/display_folded = true
 position = Vector2( 704, 656 )
 z_index = -1
 
