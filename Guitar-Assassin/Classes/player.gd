@@ -1,6 +1,5 @@
 extends "res://Classes/Character.gd"
 
-#const SPEED = 50
 const DAMAGE = 1
 
 onready var blue_bullet = preload("res://Classes/Bullets/blue_bullet.tscn")
@@ -9,12 +8,14 @@ onready var yellow_bullet = preload("res://Classes/Bullets/yellow_bullet.tscn")
 onready var green_bullet = preload("res://Classes/Bullets/green_bullet.tscn")
 onready var enemy = preload("res://Classes/Enemy.tscn")
 
-var health = 100
 var bounce_dir = Vector2(0,0)
 var string1_ability = false
 var string2_ability = false
 var string3_ability = false
 var string4_ability = false
+
+func _ready():
+	hp = 5
 
 func _process(delta):
 	key_controls()
@@ -31,6 +32,7 @@ func _process(delta):
 
 func _physics_process(delta):
 	damage(delta)
+	player_death()
 
 func key_controls():
 	var LEFT	= Input.is_action_pressed("ui_left")
@@ -83,19 +85,44 @@ func set_attack_ability(g_string):
 
 #shoot the correct attack based on string abilities
 func shoot(str_num):
+	var string1 = AudioStreamPlayer.new()
+	var string2 = AudioStreamPlayer.new()
+	var string3 = AudioStreamPlayer.new()
+	var string4 = AudioStreamPlayer.new()
+	self.add_child(string1)
+	self.add_child(string2)
+	self.add_child(string3)
+	self.add_child(string4)
+	string1.stream = load("res://Assets/game music/effects/string/C_chord.wav")
+	string2.stream = load("res://Assets/game music/effects/string/G_chord.wav")
+	string3.stream = load("res://Assets/game music/effects/string/E_chord.wav")
+	string4.stream = load("res://Assets/game music/effects/string/F_chord.wav")
+	
+	string1.volume_db = -5
+	string2.volume_db = -5
+	string3.volume_db = -5
+	string4.volume_db = -5
 	if string1_ability == true and str_num == "1":
+		string1.play()
 		var b = blue_bullet.instance()
 		set_bullet(b)
 	elif string2_ability == true and str_num == "2":
+		string2.play()
 		var b = red_bullet.instance()
 		set_bullet(b)
 	elif string3_ability == true and str_num == "3":
+		string3.play()
 		var b = yellow_bullet.instance()
 		set_bullet(b)
 	elif string4_ability == true and str_num == "4":
+		string4.play()
 		var b = green_bullet.instance()
 		set_bullet(b)
 
 func set_bullet(bullet):
 	bullet.bullet_start_position($weapon_muzzle.global_position, $weapon_muzzle.rotation)
 	get_parent().add_child(bullet)
+
+func player_death():
+	if hp <= 0:
+		get_tree().change_scene("res://Classes/game_over.tscn")

@@ -11,7 +11,7 @@ var collision_state = false
 var raycasts = { 'right': 'RayCastRight', 'left': 'RayCastLeft', 'up': 'RayCastUp', 'down': 'RayCastDown' }
 
 # Character-specific variables:
-var hp = 100
+var hp = 5
 var speed = 40
 
 func use_ability():
@@ -37,23 +37,15 @@ func sprite_direction():
 			direction = "right"
 
 func damage(delta):
-	"""if hit > 0:
-		hit -= 1
-	for body in $hitbox.get_overlapping_bodies():
-		print(body.get_name())
-		if hit == 0 and body.get("DAMAGE") != null and body.get("TYPE") != TYPE:
-			hp -= body.get("DAMAGE")
-			hit = 10
-			bounce_direction = transform.origin - body.transform.origin
-	"""
 	var collision = move_and_collide(move_direction.normalized() * delta * speed)
 	if collision:
 		if hit_timer >= HIT_TIMER_MAX:
-			hp -= 1
-			print(hp)
 			var colliding_body = collision.collider
-			bounce_direction = transform.origin - colliding_body.transform.origin
-			hit_timer -= 1
+			if colliding_body.get_name() != "TileMap":
+				hp -= 1
+				print(hp)
+				bounce_direction = transform.origin - colliding_body.transform.origin
+				hit_timer -= 1
 
 	if hit_timer > 0 and hit_timer < HIT_TIMER_MAX:
 			hit_timer -= 1
@@ -61,4 +53,3 @@ func damage(delta):
 	elif hit_timer <= 0:
 		hit_timer = HIT_TIMER_MAX
 		bounce_direction = Vector2(0,0)
-
