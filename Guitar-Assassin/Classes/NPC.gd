@@ -1,6 +1,6 @@
 extends KinematicBody2D
 
-onready var dialog_box = get_parent().get_node("player").get_node("Camera2D2").get_node("Dialog_Box/Main Text")
+onready var dialog_box = get_parent().get_node("player").get_node("Camera2D2").get_node("Dialog_Box/Main_Text")
 var dialog_started = false
 
 func _on_Visibility_body_entered(body):

@@ -3,9 +3,9 @@ extends RichTextLabel
 
 var dialog = [
 	"Hello Guitar Assassin, welcome!",
-	"Press ARROW KEYS to move around.",
-	"Collect strings (abilities) by walking over them.",
-	"Once you've collected your abilities use them by pressing 1 2 3 4."
+	"Explore and collect strings to unlock powerful new abilities.",
+	"You will need them to defeat enemies that lie ahead.",
+	"Good luck guitar assassin!"
 	]
 var page = 0
 
@@ -20,8 +20,7 @@ func start_dialog():
 	set_process_input(true) 		# enable user input
 
 
-# TODO
-# Remove dialog box after last page
+# INPUT logic for dialog box
 func _input(event):
 	if event is InputEventKey and event.get_scancode() == KEY_SPACE: 	# scan for input
 		if event.is_pressed():											# if space key is pressed
@@ -31,10 +30,12 @@ func _input(event):
 					set_bbcode(dialog[page])
 					set_visible_characters(0)
 				else:		
-					get_parent().hide()									# Call parent function hide to hide dialog box
-			else:														# 
+					get_parent().hide()									# Call parent function to hide dialog box
+			else:														
 				set_visible_characters(get_total_character_count())		
-
+	if event is InputEventKey and event.get_scancode() == KEY_ESCAPE:
+		if event.is_pressed():
+			get_parent().hide()											# Call parent function hide to hide dialog box
 
 
 func _on_Timer_timeout():
