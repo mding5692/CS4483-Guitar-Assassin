@@ -14,7 +14,8 @@ func _ready():
 	
 	var player = AudioStreamPlayer.new()
 	self.add_child(player)
-	player.stream = load("res://Assets/game music/backgroundmusic/ExploringMap.wav")
+	player.stream = load("res://Assets/game music/effects/ExploringMap.wav")
+	player.volume_db = -25
 	player.play()
 	
 
