@@ -58,15 +58,31 @@ func sprite_direction():
 	.sprite_direction()
 	match direction:
 		"up":
+			$Guitar_sprite.visible = false
+			$Guitar_sprite_up.visible = true
+			$Guitar_sprite_left.visible = false
+			
 			$weapon_muzzle.set_position(Vector2(0,-40))
 			$weapon_muzzle.rotation = 3*PI/2
 		"down":
+			$Guitar_sprite.visible = true
+			$Guitar_sprite_up.visible = false
+			$Guitar_sprite_left.visible = false
+			
 			$weapon_muzzle.set_position(Vector2(0,40))
 			$weapon_muzzle.rotation = PI/2
 		"left":
+			$Guitar_sprite.visible = false
+			$Guitar_sprite_up.visible = false
+			$Guitar_sprite_left.visible = true
+			
 			$weapon_muzzle.set_position(Vector2(-30,0))
 			$weapon_muzzle.rotation = PI
 		"right":
+			$Guitar_sprite_up.visible = false
+			$Guitar_sprite.visible = true
+			$Guitar_sprite_left.visible = false
+			
 			$weapon_muzzle.set_position(Vector2(30,0))
 			$weapon_muzzle.rotation = 0
 
