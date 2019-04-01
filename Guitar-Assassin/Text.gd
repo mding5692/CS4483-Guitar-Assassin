@@ -2,10 +2,12 @@
 extends RichTextLabel
 
 var dialog = [
-	"Hello Guitar Assassin, welcome!",
-	"Explore and collect strings to unlock powerful new abilities.",
-	"You will need them to defeat enemies that lie ahead.",
-	"Good luck guitar assassin!"
+	"Hello Mr. Kaughtabaw, welcome!",
+	"This is your test before you enter the League of Magical Assassins",
+	"Collect the strings lying around to use your weapon",
+	"You will need to defeat the enemies that lie ahead.",
+	"There is also a great monster roaming around that you have to defeat!",
+	"Good luck young man!"
 	]
 var page = 0
 
