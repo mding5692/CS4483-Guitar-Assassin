@@ -76,6 +76,7 @@ tracks/0/keys = {
 
 [sub_resource type="Animation" id=6]
 resource_name = "walkdown"
+length = 1.5
 loop = true
 step = 0.5
 tracks/0/type = "value"
@@ -85,13 +86,14 @@ tracks/0/loop_wrap = true
 tracks/0/imported = false
 tracks/0/enabled = true
 tracks/0/keys = {
-"times": PoolRealArray( 0, 0.5 ),
-"transitions": PoolRealArray( 1, 1 ),
+"times": PoolRealArray( 0, 0.5, 1 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
 "update": 1,
-"values": [ 6, 8 ]
+"values": [ 0, 1, 2 ]
 }
 
 [sub_resource type="Animation" id=7]
+length = 1.5
 loop = true
 step = 0.5
 tracks/0/type = "value"
@@ -101,13 +103,14 @@ tracks/0/loop_wrap = true
 tracks/0/imported = false
 tracks/0/enabled = true
 tracks/0/keys = {
-"times": PoolRealArray( 0, 0.5 ),
-"transitions": PoolRealArray( 1, 1 ),
+"times": PoolRealArray( 0, 0.5, 1 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
 "update": 1,
-"values": [ 9, 11 ]
+"values": [ 3, 4, 5 ]
 }
 
 [sub_resource type="Animation" id=8]
+length = 1.5
 loop = true
 step = 0.5
 tracks/0/type = "value"
@@ -117,13 +120,14 @@ tracks/0/loop_wrap = true
 tracks/0/imported = false
 tracks/0/enabled = true
 tracks/0/keys = {
-"times": PoolRealArray( 0, 0.5 ),
-"transitions": PoolRealArray( 1, 1 ),
+"times": PoolRealArray( 0, 0.5, 1 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
 "update": 1,
-"values": [ 3, 5 ]
+"values": [ 6, 7, 8 ]
 }
 
 [sub_resource type="Animation" id=9]
+length = 1.5
 loop = true
 step = 0.5
 tracks/0/type = "value"
@@ -133,10 +137,10 @@ tracks/0/loop_wrap = true
 tracks/0/imported = false
 tracks/0/enabled = true
 tracks/0/keys = {
-"times": PoolRealArray( 0, 0.5 ),
-"transitions": PoolRealArray( 1, 1 ),
+"times": PoolRealArray( 0, 0.5, 1 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
 "update": 1,
-"values": [ 0, 2 ]
+"values": [ 10, 11, 10 ]
 }
 
 [sub_resource type="RectangleShape2D" id=10]

@@ -13,7 +13,10 @@ func bullet_start_position(pos, dir):
 func _physics_process(delta):
 	var collision = move_and_collide(velocity * delta)
 	if collision:
-		velocity = velocity.bounce(collision.normal)
-		bullet_bounce += 1
-		if bullet_bounce == 2:
+		if collision.collider.get_name() != "TileMap":
 			queue_free()
+		else:
+			velocity = velocity.bounce(collision.normal)
+			bullet_bounce += 1
+			if bullet_bounce == 2:
+				queue_free()

@@ -26,7 +26,6 @@ position = Vector2( -310.327, 319.345 )
 position = Vector2( 301.716, -126.771 )
 
 [node name="player" parent="." instance=ExtResource( 5 )]
-editor/display_folded = true
 position = Vector2( 812.681, 720 )
 
 [node name="Camera2D2" type="Camera2D" parent="player"]
