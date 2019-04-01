@@ -1,6 +1,7 @@
-[gd_scene load_steps=5 format=2]
+[gd_scene load_steps=6 format=2]
 
 [ext_resource path="res://Assets/montserrat/Montserrat-Black.otf" type="DynamicFontData" id=1]
+[ext_resource path="res://Classes/quit.gd" type="Script" id=2]
 
 [sub_resource type="DynamicFont" id=1]
 size = 48
@@ -32,7 +33,9 @@ margin_right = 412.079
 margin_bottom = 343.495
 custom_styles/focus = SubResource( 2 )
 custom_fonts/font = SubResource( 3 )
-custom_colors/font_color_hover = Color( 0.439216, 0.0235294, 0.0235294, 1 )
+custom_colors/font_color_pressed = Color( 0.788235, 0.0705882, 0.0705882, 1 )
 text = "QUIT"
 flat = true
+script = ExtResource( 2 )
 
+[connection signal="pressed" from="quit" to="quit" method="_on_quit_pressed"]
