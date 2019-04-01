@@ -43,7 +43,6 @@ func damage(delta):
 			var colliding_body = collision.collider
 			if colliding_body.get_name() != "TileMap":
 				hp -= 1
-				print(hp)
 				bounce_direction = transform.origin - colliding_body.transform.origin
 				hit_timer -= 1
 
