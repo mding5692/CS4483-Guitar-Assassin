@@ -1,19 +1,21 @@
 [gd_scene load_steps=4 format=2]
 
 [ext_resource path="res://Classes/Bullets/blue_bullet.gd" type="Script" id=1]
-[ext_resource path="res://Assets/Sprites/blue_bullet.png" type="Texture" id=2]
+[ext_resource path="res://Assets/Sprites/shock_wave_blue.png" type="Texture" id=2]
 
 [sub_resource type="RectangleShape2D" id=1]
-extents = Vector2( 10, 5.35611 )
+extents = Vector2( 10, 12.6925 )
 
 [node name="blue_bullet" type="KinematicBody2D"]
 position = Vector2( 321.759, 195.709 )
 script = ExtResource( 1 )
 
 [node name="Sprite" type="Sprite" parent="."]
+position = Vector2( -0.0388592, -0.399969 )
+scale = Vector2( 0.258892, 0.249852 )
 texture = ExtResource( 2 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2( 0.12851, -1.1566 )
+position = Vector2( 0.12851, -0.1566 )
 shape = SubResource( 1 )
 
