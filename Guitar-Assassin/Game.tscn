@@ -23,7 +23,7 @@ position = Vector2( 793.657, 450.345 )
 position = Vector2( -310.327, 319.345 )
 
 [node name="Boss" parent="." instance=ExtResource( 4 )]
-position = Vector2( 408.204, 321.999 )
+position = Vector2( 301.716, -126.771 )
 
 [node name="player" parent="." instance=ExtResource( 5 )]
 editor/display_folded = true
@@ -80,6 +80,7 @@ bbcode_text = "Press ESC to skip."
 text = "Press ESC to skip."
 
 [node name="Enemy" parent="." instance=ExtResource( 3 )]
+position = Vector2( 251.007, 271.291 )
 
 [node name="Instruction_group" type="Node2D" parent="."]
 editor/display_folded = true
