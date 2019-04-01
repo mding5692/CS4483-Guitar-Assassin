@@ -15,6 +15,7 @@ var string3_ability = false
 var string4_ability = false
 
 func _ready():
+	type = "Player"
 	hp = 5
 
 func _process(delta):
