@@ -26,6 +26,8 @@ func _process(delta):
 	if spot_player_timer > 0:
 		sees_player = true
 		spot_player_timer -= 1
+	elif spot_player_timer == 0:
+		get_parent().play_exploration_music()
 		
 	if hurt_timer > 0:
 		$Sprite.self_modulate = Color(1, 0, 0)
@@ -80,13 +82,10 @@ func enemy_animation():
 
 func _on_Visibility_body_entered(body):
 	if body.get_name() == "player":
-		sees_player = true
-		get_parent().play_fight_music()
+		spots_player()
 
 func _on_Visibility_body_exited(body):
-	if body.get_name() == "player" && spot_player_timer == 0:
-		sees_player = false
-		get_parent().play_exploration_music()
+	pass
 		
 func spots_player():
 	sees_player = true

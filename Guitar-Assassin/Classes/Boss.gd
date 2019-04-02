@@ -12,3 +12,8 @@ func use_weapon():
 
 func weapon_direction():
 	pass
+
+func spots_player():
+	sees_player = true
+	spot_player_timer = 15
+	get_parent().play_boss_music()
