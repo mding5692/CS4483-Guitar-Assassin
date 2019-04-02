@@ -48,6 +48,7 @@ custom_fonts/font = SubResource( 3 )
 custom_colors/font_color_hover = Color( 0.439216, 0.0235294, 0.0235294, 1 )
 text = "QUIT"
 flat = true
+script = ExtResource( 2 )
 
 [connection signal="pressed" from="restart" to="game_over" method="_on_restart_pressed"]
 [connection signal="pressed" from="quit" to="game_over" method="_on_quit_pressed"]
