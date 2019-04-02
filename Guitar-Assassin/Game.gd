@@ -6,8 +6,6 @@ onready var string3 = preload("res://Classes/GuitarStrings/string3.tscn")
 onready var string4 = preload("res://Classes/GuitarStrings/string4.tscn")
 
 func _ready():
-	# Called when the node is added to the scene for the first time.
-	# Initialization here
 	set_process(true)
 	OS.set_window_size(Vector2(712, 512))
 	spawn_strings()
@@ -28,7 +26,7 @@ func spawn_strings():
 	add_child(s3)
 	var s4 = string4.instance()
 	add_child(s4)
-	s1.set_position(Vector2(880,400))
-	s2.set_position(Vector2(560,400))
-	s3.set_position(Vector2(-240,272))
-	s4.set_position(Vector2(160,-112))
+	s1.set_position(Vector2(160,-112))
+	s2.set_position(Vector2(-240,272))
+	s3.set_position(Vector2(560,400))
+	s4.set_position(Vector2(880,400))
