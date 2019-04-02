@@ -1,7 +1,5 @@
 extends "res://Classes/Character.gd"
 
-const DAMAGE = 1
-
 onready var blue_bullet = preload("res://Classes/Bullets/blue_bullet.tscn")
 onready var red_bullet = preload("res://Classes/Bullets/red_bullet.tscn")
 onready var yellow_bullet = preload("res://Classes/Bullets/yellow_bullet.tscn")
@@ -17,13 +15,15 @@ var string4_ability = false
 var player_is_hurt = false
 var hurt_timer = 0
 
+var max_health = 10
 var timer = null
 var bullet_delay = 0.5
 var can_shoot = true
 
 func _ready():
 	type = "Player"
-	hp = 10
+	hp = max_health
+	speed = 55
 	
 	timer = Timer.new()
 	timer.set_one_shot(true)
@@ -166,9 +166,10 @@ func set_bullet(bullet):
 		can_shoot = false
 		timer.start()
 
-
 func player_hurt_or_death():
 	if hp <= 0:
 		get_tree().change_scene("res://Classes/game_over.tscn")
 	elif player_is_hurt:
 		hurt_timer = 2
+func health_changed():
+	pass
