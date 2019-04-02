@@ -19,8 +19,12 @@ frame = 6
 anims/bosswalkright = SubResource( 1 )
 
 [node name="Axe" parent="." index="7" instance=ExtResource( 4 )]
+visible = false
 position = Vector2( 6.95041, -3.74313 )
 
-[node name="Weapon" parent="." index="10"]
+[node name="Katana_left" parent="." index="10"]
+visible = false
+
+[node name="Katana_right" parent="." index="11"]
 visible = false
 

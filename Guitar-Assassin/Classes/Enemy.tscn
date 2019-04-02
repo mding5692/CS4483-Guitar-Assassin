@@ -1,8 +1,9 @@
-[gd_scene load_steps=5 format=2]
+[gd_scene load_steps=6 format=2]
 
 [ext_resource path="res://Classes/Character.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Classes/Enemy.gd" type="Script" id=2]
-[ext_resource path="res://Classes/weapons/weapon.tscn" type="PackedScene" id=3]
+[ext_resource path="res://Assets/Sprites/katana.png" type="Texture" id=3]
+[ext_resource path="res://Classes/weapons/weapon.tscn" type="PackedScene" id=4]
 
 [sub_resource type="CircleShape2D" id=1]
 radius = 120.0
@@ -30,8 +31,22 @@ position = Vector2( 205.078, 91.0684 )
 [node name="CollisionShape2D" parent="hitbox" index="0"]
 position = Vector2( -0.194027, 0.480145 )
 
-[node name="Weapon" parent="." index="9" instance=ExtResource( 3 )]
-position = Vector2( 11.26, 6.99097 )
+[node name="Katana_left" type="Sprite" parent="." index="9"]
+position = Vector2( 3.36228, 8.57051 )
+scale = Vector2( 0.259588, 0.501196 )
+texture = ExtResource( 3 )
+flip_h = true
+
+[node name="Katana_right" type="Sprite" parent="." index="10"]
+position = Vector2( 14.1558, 8.5705 )
+scale = Vector2( 0.350083, 0.445773 )
+z_index = -1
+texture = ExtResource( 3 )
+
+[node name="Weapon" parent="." index="11" instance=ExtResource( 4 )]
+visible = false
+position = Vector2( 9.68046, 9.09703 )
+z_index = -1
 
 [connection signal="body_entered" from="Visibility" to="." method="_on_Visibility_body_entered"]
 [connection signal="body_exited" from="Visibility" to="." method="_on_Visibility_body_exited"]

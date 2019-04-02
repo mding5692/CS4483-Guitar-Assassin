@@ -3,7 +3,8 @@ extends KinematicBody2D
 onready var dialog_box = get_parent().get_node("player").get_node("Camera2D2").get_node("Dialog_Box/Main_Text")
 
 func _ready():
-	$Weapon/Sprite.visible = false
+	$Katana_left.visible = false
+	$Katana_right.visible = false
 
 func _on_Visibility_body_entered(body):
 	if body.get_name() == "player":

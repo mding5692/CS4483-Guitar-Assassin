@@ -6,7 +6,8 @@
 [node name="Katana" instance=ExtResource( 1 )]
 
 [node name="Sprite" parent="." index="1"]
-position = Vector2( 0.620232, -5.20103 )
+position = Vector2( -22.9192, -2.82568 )
+rotation = -3.14159
 scale = Vector2( 0.0875724, 0.0841336 )
 texture = ExtResource( 2 )
 
