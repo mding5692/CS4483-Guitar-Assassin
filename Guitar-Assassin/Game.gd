@@ -29,6 +29,6 @@ func spawn_strings():
 	var s4 = string4.instance()
 	add_child(s4)
 	s1.set_position(Vector2(880,400))
-	s2.set_position(Vector2(-240,272))
-	s3.set_position(Vector2(560,400))
+	s2.set_position(Vector2(560,400))
+	s3.set_position(Vector2(-240,272))
 	s4.set_position(Vector2(160,-112))

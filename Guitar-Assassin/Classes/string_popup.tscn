@@ -1,0 +1,30 @@
+[gd_scene format=2]
+
+[node name="string_popup" type="CanvasLayer"]
+
+[node name="string_pop" type="PopupDialog" parent="."]
+visible = true
+margin_left = 109.0
+margin_top = 198.0
+margin_right = 449.0
+margin_bottom = 289.0
+
+[node name="string_label" type="Label" parent="string_pop"]
+margin_left = 17.0
+margin_top = 9.0
+margin_right = 297.0
+margin_bottom = 54.0
+valign = 1
+
+[node name="Label" type="Label" parent="string_pop"]
+margin_left = 251.0
+margin_top = 55.0
+margin_right = 328.0
+margin_bottom = 85.0
+text = "ESC to exit"
+valign = 1
+
+[node name="pause" type="Control" parent="."]
+margin_right = 711.0
+margin_bottom = 513.0
+

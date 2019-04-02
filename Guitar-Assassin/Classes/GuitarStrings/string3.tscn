@@ -4,35 +4,18 @@
 [ext_resource path="res://Assets/Sprites/string3.png" type="Texture" id=2]
 
 [sub_resource type="RectangleShape2D" id=1]
-
-custom_solver_bias = 0.0
 extents = Vector2( 10.5584, 10 )
 
 [node name="string3" type="Area2D"]
-
 position = Vector2( 175.61, 89.3456 )
-input_pickable = true
-gravity_vec = Vector2( 0, 1 )
-gravity = 98.0
-linear_damp = 0.1
-angular_damp = 1.0
-audio_bus_override = false
-audio_bus_name = "Master"
 script = ExtResource( 1 )
-_sections_unfolded = [ "Transform" ]
 
-[node name="Sprite" type="Sprite" parent="." index="0"]
-
+[node name="Sprite" type="Sprite" parent="."]
 scale = Vector2( 0.2, 0.2 )
 texture = ExtResource( 2 )
-_sections_unfolded = [ "Transform" ]
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="." index="1"]
-
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2( -0.427185, -0.0448227 )
 shape = SubResource( 1 )
-_sections_unfolded = [ "Transform" ]
 
 [connection signal="body_entered" from="." to="." method="_on_string3_body_entered"]
-
-

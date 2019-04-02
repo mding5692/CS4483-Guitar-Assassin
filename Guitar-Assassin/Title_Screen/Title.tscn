@@ -44,7 +44,6 @@ alignment = 1
 
 [node name="MenuButton" parent="Menu/CentreRow/Buttons" instance=ExtResource( 4 )]
 margin_top = 110.0
-margin_right = 360.0
 margin_bottom = 170.0
 
 [node name="QuitButton" parent="Menu/CentreRow/Buttons" instance=ExtResource( 5 )]

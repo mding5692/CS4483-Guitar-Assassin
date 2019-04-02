@@ -9,6 +9,7 @@ extents = Vector2( 7.51243, 7.40411 )
 [node name="string1" type="Area2D"]
 position = Vector2( 297.876, 145.289 )
 scale = Vector2( 0.25, 0.25 )
+z_index = 50
 gravity_vec = Vector2( 0, 0 )
 script = ExtResource( 1 )
 
