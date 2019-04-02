@@ -86,3 +86,7 @@ func hurt_or_death_animation():
 		queue_free()
 	else:
 		hurt_timer = 2
+		
+func use_weapon():
+	print("Baam")
+	pass

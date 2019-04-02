@@ -1,0 +1,29 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://Assets/Sprites/katana.png" type="Texture" id=1]
+
+[sub_resource type="Animation" id=1]
+resource_name = "swingup"
+length = 2.0
+tracks/0/type = "value"
+tracks/0/path = NodePath("Sprite:rotation_degrees")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 1, 2 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 0,
+"values": [ -90.0, -45.0, 0.0 ]
+}
+
+[node name="Katana" type="Node2D"]
+
+[node name="anim" type="AnimationPlayer" parent="."]
+anims/swingup = SubResource( 1 )
+
+[node name="Sprite" type="Sprite" parent="."]
+position = Vector2( 23.8611, -3.13962 )
+texture = ExtResource( 1 )
+
