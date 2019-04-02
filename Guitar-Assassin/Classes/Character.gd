@@ -48,7 +48,6 @@ func damage(delta):
 				hit_timer -= 1
 				var character = get_parent().get_node(node_name)
 				if character.type == "Enemy" || character.type == "Boss":
-					print("A")
 					character.use_weapon()
 
 	if hit_timer > 0 and hit_timer < HIT_TIMER_MAX:
@@ -57,6 +56,3 @@ func damage(delta):
 	elif hit_timer <= 0:
 		hit_timer = HIT_TIMER_MAX
 		bounce_direction = Vector2(0,0)
-		
-	if type == "Enemy":
-		print(hp)

@@ -125,11 +125,8 @@ anims/swingright = SubResource( 2 )
 anims/swingup = SubResource( 1 )
 
 [node name="Sprite" type="Sprite" parent="."]
-position = Vector2( 0.941868, 23.5471 )
-rotation = -1.5708
+position = Vector2( 12.2445, -0.941887 )
 scale = Vector2( 0.538868, 0.570368 )
 texture = ExtResource( 2 )
-flip_h = true
-flip_v = true
 
 [connection signal="animation_finished" from="anim" to="." method="_on_anim_animation_finished"]
