@@ -49,7 +49,6 @@ margin_bottom = 170.0
 
 [node name="QuitButton" parent="Menu/CentreRow/Buttons" instance=ExtResource( 5 )]
 margin_top = 210.0
-margin_right = 360.0
 margin_bottom = 270.0
 script = null
 
