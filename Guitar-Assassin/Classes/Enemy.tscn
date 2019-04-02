@@ -31,7 +31,7 @@ position = Vector2( 205.078, 91.0684 )
 position = Vector2( -0.194027, 0.480145 )
 
 [node name="Weapon" parent="." index="9" instance=ExtResource( 3 )]
-position = Vector2( 11.26, 6.99097 )
+position = Vector2( 0.729696, 1.7258 )
 
 [connection signal="body_entered" from="Visibility" to="." method="_on_Visibility_body_entered"]
 [connection signal="body_exited" from="Visibility" to="." method="_on_Visibility_body_exited"]

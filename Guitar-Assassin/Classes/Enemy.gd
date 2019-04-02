@@ -45,14 +45,14 @@ func _process(delta):
 
 func change_to_player_direction():
 	if move_direction.x < 0:
-		direction = 'left'
-	elif move_direction.x > 0:
 		direction = 'right'
+	elif move_direction.x > 0:
+		direction = 'left'
 		
 	if move_direction.y < 0 && move_direction.y < move_direction.x:
-		direction = 'up'
-	elif move_direction.y > 0 && move_direction.y > move_direction.x:
 		direction = 'down'
+	elif move_direction.y > 0 && move_direction.y > move_direction.x:
+		direction = 'up'
 		
 	enemy_animation()
 
@@ -89,7 +89,13 @@ func hurt_or_death_animation():
 		hurt_timer = 2
 		
 func use_weapon():
-	print("B")
 	$Weapon/Sprite.visible = true
-	$Weapon/anim.play("swingup")
-	print("C")
+	if direction == "left":
+		$Weapon/anim.play("swingleft")		
+	elif direction == "right":
+		$Weapon/anim.play("swingright")		
+	elif direction == "up":
+		$Weapon/anim.play("swingup")		
+	elif direction == "down":
+		$Weapon/anim.play("swingdown")		
+		
