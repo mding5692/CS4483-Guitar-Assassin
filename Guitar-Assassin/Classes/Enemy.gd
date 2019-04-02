@@ -12,6 +12,8 @@ onready var player_target = get_parent().get_node("player")
 var movetimer_length = 15
 var movetimer = 0
 
+var hurt_timer = 0
+
 func _ready():
 	hp = 50
 	type = "Enemy"
@@ -22,6 +24,12 @@ func _process(delta):
 	if spot_player_timer > 0:
 		sees_player = true
 		spot_player_timer -= 1
+		
+	if hurt_timer > 0:
+		$Sprite.self_modulate = Color(1, 0, 0)
+		hurt_timer -= 1
+	else:
+		$Sprite.self_modulate = Color(1, 1, 1)
 	
 	character_movement()
 	if sees_player: # pursues player if they see the player
@@ -74,4 +82,4 @@ func hurt_or_death_animation():
 	if hp == 0:
 		queue_free()
 	else:
-		print("b")
+		hurt_timer = 2
