@@ -15,13 +15,14 @@ var string4_ability = false
 var player_is_hurt = false
 var hurt_timer = 0
 
+var max_health = 10
 var timer = null
 var bullet_delay = 0.5
 var can_shoot = true
 
 func _ready():
 	type = "Player"
-	hp = 10
+	hp = max_health
 	speed = 55
 	
 	timer = Timer.new()
@@ -170,3 +171,5 @@ func player_hurt_or_death():
 		get_tree().change_scene("res://Classes/game_over.tscn")
 	elif player_is_hurt:
 		hurt_timer = 2
+func health_changed():
+	pass

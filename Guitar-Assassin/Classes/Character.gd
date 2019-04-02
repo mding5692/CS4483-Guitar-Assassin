@@ -14,6 +14,8 @@ var raycasts = { 'right': 'RayCastRight', 'left': 'RayCastLeft', 'up': 'RayCastU
 var hp = 5
 var speed = 40
 
+signal health_changed
+
 func use_ability():
 	pass
 
@@ -41,10 +43,16 @@ func damage(delta):
 	if collision:
 		if hit_timer >= HIT_TIMER_MAX:
 			var colliding_body = collision.collider
-			if colliding_body.get_name() != "TileMap":
+			var node_name = colliding_body.get_name()
+			if node_name != "TileMap" && node_name != "Kaughtabaw":
 				hp -= 1
+				emit_signal("health_changed", hp)
 				bounce_direction = transform.origin - colliding_body.transform.origin
 				hit_timer -= 1
+				var character = get_parent().get_node(node_name)
+				if character.type == "Enemy" || character.type == "Boss":
+					print("A")
+					character.use_weapon()
 
 	if hit_timer > 0 and hit_timer < HIT_TIMER_MAX:
 			hit_timer -= 1
@@ -55,3 +63,8 @@ func damage(delta):
 		
 	if type == "Enemy":
 		print(hp)
+		
+
+func _on_Character_health_changed():
+#	pass # Replace with function body.
+	get_node("/root/Game/player").up
