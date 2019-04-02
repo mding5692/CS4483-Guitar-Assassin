@@ -1,22 +1,36 @@
 extends "res://Classes/Character.gd"
 
-const TYPE = "ENEMY"
 var enemy_moves = {'up': Vector2(0,-1), 'right': Vector2(1,0), 'left': Vector2(-1,0), 'down': Vector2(0,1)}
 const animation = "walk"
 
 # For raycasting and figuring if player is seen
 var sees_player = false
+var spot_player_timer = 0
 onready var player_target = get_parent().get_node("player")
 
 # For handling how much time it talks to walk
 var movetimer_length = 15
 var movetimer = 0
 
+var hurt_timer = 0
+
 func _ready():
+	hp = 50
+	type = "Enemy"
 	speed = 30
 	randomize()
 
 func _process(delta):
+	if spot_player_timer > 0:
+		sees_player = true
+		spot_player_timer -= 1
+		
+	if hurt_timer > 0:
+		$Sprite.self_modulate = Color(1, 0, 0)
+		hurt_timer -= 1
+	else:
+		$Sprite.self_modulate = Color(1, 1, 1)
+	
 	character_movement()
 	if sees_player: # pursues player if they see the player
 		move_direction = (player_target.global_position - self.global_position).normalized()
@@ -57,5 +71,15 @@ func _on_Visibility_body_entered(body):
 		sees_player = true
 
 func _on_Visibility_body_exited(body):
-	if body.get_name() == "player":
+	if body.get_name() == "player" && spot_player_timer == 0:
 		sees_player = false
+		
+func spots_player():
+	sees_player = true
+	spot_player_timer = 15
+
+func hurt_or_death_animation():
+	if hp == 0:
+		queue_free()
+	else:
+		hurt_timer = 2

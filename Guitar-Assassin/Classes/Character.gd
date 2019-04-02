@@ -1,6 +1,6 @@
 extends KinematicBody2D
 
-
+var type = ""
 var tile_size = 32
 var move_direction = Vector2(0,0)
 var bounce_direction = Vector2(0,0)
@@ -52,3 +52,6 @@ func damage(delta):
 	elif hit_timer <= 0:
 		hit_timer = HIT_TIMER_MAX
 		bounce_direction = Vector2(0,0)
+		
+	if type == "Enemy":
+		print(hp)
