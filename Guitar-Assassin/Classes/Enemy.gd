@@ -15,7 +15,8 @@ var movetimer = 0
 var hurt_timer = 0
 
 func _ready():
-	$Weapon/Sprite.visible = false
+	$Katana_right.visible = false
+	$Katana_left.visible = false
 	hp = 50
 	type = "Enemy"
 	speed = 30
@@ -36,25 +37,35 @@ func _process(delta):
 	if sees_player: # pursues player if they see the player
 		move_direction = (player_target.global_position - self.global_position).normalized()
 		change_to_player_direction()
+		weapon_direction()
 	else: # else do random movement
 		if movetimer > 0:
 			movetimer -= 1
 		elif movetimer == 0:
 			change_enemy_direction()
+			weapon_direction()
 			movetimer = movetimer_length
 
 func change_to_player_direction():
 	if move_direction.x < 0:
-		direction = 'left'
-	elif move_direction.x > 0:
 		direction = 'right'
+	elif move_direction.x > 0:
+		direction = 'left'
 		
 	if move_direction.y < 0 && move_direction.y < move_direction.x:
-		direction = 'up'
-	elif move_direction.y > 0 && move_direction.y > move_direction.x:
 		direction = 'down'
+	elif move_direction.y > 0 && move_direction.y > move_direction.x:
+		direction = 'up'
 		
 	enemy_animation()
+	
+func weapon_direction():
+	if direction == "left" || direction == "down":
+		$Katana_right.visible = true
+		$Katana_left.visible = false
+	else: 
+		$Katana_right.visible = false
+		$Katana_left.visible = true
 
 func change_enemy_direction():
 	var randNum = randi() % 4
@@ -89,7 +100,9 @@ func hurt_or_death_animation():
 		hurt_timer = 2
 		
 func use_weapon():
-	print("B")
-	$Weapon/Sprite.visible = true
-	$Weapon/anim.play("swingup")
-	print("C")
+	pass
+#	$Weapon/Sprite.visible = true
+#	if direction == "left" || direction == "up":
+#		$Weapon/anim.play("swingup")	
+#	elif direction == "right" || direction == "down":
+#		$Weapon/anim.play("swingright")			
