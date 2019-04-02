@@ -42,12 +42,13 @@ func damage(delta):
 		if hit_timer >= HIT_TIMER_MAX:
 			var colliding_body = collision.collider
 			var node_name = colliding_body.get_name()
-			if node_name != "TileMap":
+			if node_name != "TileMap" && node_name != "Kaughtabaw":
 				hp -= 1
 				bounce_direction = transform.origin - colliding_body.transform.origin
 				hit_timer -= 1
 				var character = get_parent().get_node(node_name)
 				if character.type == "Enemy" || character.type == "Boss":
+					print("A")
 					character.use_weapon()
 
 	if hit_timer > 0 and hit_timer < HIT_TIMER_MAX:

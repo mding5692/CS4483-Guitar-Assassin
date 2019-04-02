@@ -15,6 +15,7 @@ var movetimer = 0
 var hurt_timer = 0
 
 func _ready():
+	$Weapon/Sprite.visible = false
 	hp = 50
 	type = "Enemy"
 	speed = 30
@@ -88,5 +89,7 @@ func hurt_or_death_animation():
 		hurt_timer = 2
 		
 func use_weapon():
-	print("Baam")
-	pass
+	print("B")
+	$Weapon/Sprite.visible = true
+	$Weapon/anim.play("swingup")
+	print("C")
