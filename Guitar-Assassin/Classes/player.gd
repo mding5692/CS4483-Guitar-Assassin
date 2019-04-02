@@ -165,7 +165,6 @@ func set_bullet(bullet):
 		can_shoot = false
 		timer.start()
 
-
 func player_hurt_or_death():
 	if hp <= 0:
 		get_tree().change_scene("res://Classes/game_over.tscn")
