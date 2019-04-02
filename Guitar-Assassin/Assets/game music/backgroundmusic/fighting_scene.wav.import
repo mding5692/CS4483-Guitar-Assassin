@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/fighting_scene.wav-bed5f165495e29639089af9933efdcd6.sample"
+
+[deps]
+
+source_file="res://Assets/game music/backgroundmusic/fighting_scene.wav"
+dest_files=[ "res://.import/fighting_scene.wav-bed5f165495e29639089af9933efdcd6.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=true
+edit/normalize=true
+edit/loop=false
+compress/mode=0

@@ -1,7 +1,5 @@
 extends "res://Classes/Character.gd"
 
-const DAMAGE = 1
-
 onready var blue_bullet = preload("res://Classes/Bullets/blue_bullet.tscn")
 onready var red_bullet = preload("res://Classes/Bullets/red_bullet.tscn")
 onready var yellow_bullet = preload("res://Classes/Bullets/yellow_bullet.tscn")
@@ -18,10 +16,20 @@ var player_is_hurt = false
 var hurt_timer = 0
 
 var max_health = 10
+var timer = null
+var bullet_delay = 0.5
+var can_shoot = true
 
 func _ready():
 	type = "Player"
 	hp = max_health
+	speed = 55
+	
+	timer = Timer.new()
+	timer.set_one_shot(true)
+	timer.set_wait_time(bullet_delay)
+	timer.connect("timeout", self, "on_timeout_complete")
+	add_child(timer)
 
 func _process(delta):
 	if hurt_timer > 0:
@@ -29,20 +37,21 @@ func _process(delta):
 		hurt_timer -= 1
 	else:
 		$Sprite.self_modulate = Color(1, 1, 1)
-		player_is_hurt = false		
+		player_is_hurt = false
 	
 	key_controls()
 	character_movement()
 	sprite_direction()
-	if Input.is_action_just_pressed("shoot1"):
+	if Input.is_action_just_pressed("shoot1") and can_shoot:
 		shoot("1")
-	elif Input.is_action_just_pressed("shoot2"):
+	elif Input.is_action_just_pressed("shoot2") and can_shoot:
 		shoot("2")
-	elif Input.is_action_just_pressed("shoot3"):
+	elif Input.is_action_just_pressed("shoot3") and can_shoot:
 		shoot("3")
-	elif Input.is_action_just_pressed("shoot4"):
+	elif Input.is_action_just_pressed("shoot4") and can_shoot:
 		shoot("4")
-
+	
+	
 func _physics_process(delta):
 	damage(delta)
 	player_hurt_or_death()
@@ -148,9 +157,15 @@ func shoot(str_num):
 		var b = green_bullet.instance()
 		set_bullet(b)
 
+func on_timeout_complete():
+	can_shoot = true
+
 func set_bullet(bullet):
-	bullet.bullet_start_position($weapon_muzzle.global_position, $weapon_muzzle.rotation)
-	get_parent().add_child(bullet)
+		bullet.bullet_start_position($weapon_muzzle.global_position, $weapon_muzzle.rotation)
+		get_parent().add_child(bullet)
+		can_shoot = false
+		timer.start()
+
 
 func player_hurt_or_death():
 	if hp <= 0:
