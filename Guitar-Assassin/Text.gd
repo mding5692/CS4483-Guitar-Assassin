@@ -3,10 +3,10 @@ extends RichTextLabel
 
 var dialog = [
 	"Hello Mr. Kaughtabaw, welcome!",
-	"This is your test before you enter the League of Magical Assassins",
-	"Collect the strings lying around to use your weapon",
-	"You will need to defeat the enemies that lie ahead.",
-	"There is also a great monster roaming around that you have to defeat!",
+	"This is your test before you enter the League of Magical Assassins.",
+	"Collect the strings lying around to use your weapon.",
+	"You will need to defeat the enemies that lie ahead...",
+	"Be careful, there is a great monster roaming around that you will have to defeat!",
 	"Good luck young man!"
 	]
 var page = 0
