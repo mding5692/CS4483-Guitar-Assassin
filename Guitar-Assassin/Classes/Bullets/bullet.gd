@@ -21,6 +21,7 @@ func _physics_process(delta):
 				hurt_character.hp -= 1
 				if hurt_character.type == "Enemy" || hurt_character.type == "Boss":
 					hurt_character.spots_player()
+					hurt_character.hurt_or_death_animation()			
 			queue_free()
 		else:
 			velocity = velocity.bounce(collision.normal)

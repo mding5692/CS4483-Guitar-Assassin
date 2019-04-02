@@ -69,3 +69,9 @@ func _on_Visibility_body_exited(body):
 func spots_player():
 	sees_player = true
 	spot_player_timer = 15
+
+func hurt_or_death_animation():
+	if hp == 0:
+		queue_free()
+	else:
+		print("b")
