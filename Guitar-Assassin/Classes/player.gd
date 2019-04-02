@@ -1,7 +1,5 @@
 extends "res://Classes/Character.gd"
 
-const DAMAGE = 1
-
 onready var blue_bullet = preload("res://Classes/Bullets/blue_bullet.tscn")
 onready var red_bullet = preload("res://Classes/Bullets/red_bullet.tscn")
 onready var yellow_bullet = preload("res://Classes/Bullets/yellow_bullet.tscn")
@@ -24,6 +22,7 @@ var can_shoot = true
 func _ready():
 	type = "Player"
 	hp = 10
+	speed = 55
 	
 	timer = Timer.new()
 	timer.set_one_shot(true)

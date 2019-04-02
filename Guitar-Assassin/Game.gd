@@ -28,10 +28,10 @@ func spawn_strings():
 	add_child(s3)
 	var s4 = string4.instance()
 	add_child(s4)
-	s1.set_position(Vector2(160,-112))
-	s2.set_position(Vector2(-240,272))
-	s3.set_position(Vector2(560,400))
-	s4.set_position(Vector2(880,400))
+	s1.set_position(Vector2(880,400))
+	s2.set_position(Vector2(560,400))
+	s3.set_position(Vector2(-240,272))
+	s4.set_position(Vector2(160,-112))
 	
 func play_fight_music():
 	if audio_player:
@@ -39,6 +39,6 @@ func play_fight_music():
 			audio_player.play()
 			
 func play_exploration_music():
-	if audio_player:	
+	if audio_player:
 		audio_player.stream = load("res://Assets/game music/effects/ExploringMap.wav")
 		audio_player.play()
