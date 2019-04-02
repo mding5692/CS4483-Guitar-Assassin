@@ -14,11 +14,21 @@ var string2_ability = false
 var string3_ability = false
 var string4_ability = false
 
+var player_is_hurt = false
+var hurt_timer = 0
+
 func _ready():
 	type = "Player"
 	hp = 5
 
 func _process(delta):
+	if hurt_timer > 0:
+		$Sprite.self_modulate = Color(1, 0, 0)
+		hurt_timer -= 1
+	else:
+		$Sprite.self_modulate = Color(1, 1, 1)
+		player_is_hurt = false		
+	
 	key_controls()
 	character_movement()
 	sprite_direction()
@@ -33,7 +43,7 @@ func _process(delta):
 
 func _physics_process(delta):
 	damage(delta)
-	player_death()
+	player_hurt_or_death()
 
 func key_controls():
 	var LEFT	= Input.is_action_pressed("ui_left")
@@ -140,6 +150,8 @@ func set_bullet(bullet):
 	bullet.bullet_start_position($weapon_muzzle.global_position, $weapon_muzzle.rotation)
 	get_parent().add_child(bullet)
 
-func player_death():
+func player_hurt_or_death():
 	if hp <= 0:
 		get_tree().change_scene("res://Classes/game_over.tscn")
+	elif player_is_hurt:
+		hurt_timer = 2
