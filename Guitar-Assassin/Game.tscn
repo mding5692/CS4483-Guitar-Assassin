@@ -144,4 +144,8 @@ tile_data = PoolIntArray( -1179648, 0, 0, -1179647, 0, 0, -1179646, 0, 0, -11796
 
 [node name="string_popup" parent="." instance=ExtResource( 12 )]
 
+[connection signal="health_changed" from="Enemy2" to="Enemy2" method="_on_Character_health_changed"]
+[connection signal="health_changed" from="Boss" to="Boss" method="_on_Character_health_changed"]
+[connection signal="health_changed" from="player" to="player/Camera2D2/GUI_Container/GUI" method="_on_player_health_changed"]
 [connection signal="timeout" from="player/Camera2D2/Dialog_Box/Polygon2D/Timer" to="player/Camera2D2/Dialog_Box/Main_Text" method="_on_Timer_timeout"]
+[connection signal="health_changed" from="Enemy" to="Enemy" method="_on_Character_health_changed"]
