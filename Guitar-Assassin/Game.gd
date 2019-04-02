@@ -5,16 +5,18 @@ onready var string2 = preload("res://Classes/GuitarStrings/string2.tscn")
 onready var string3 = preload("res://Classes/GuitarStrings/string3.tscn")
 onready var string4 = preload("res://Classes/GuitarStrings/string4.tscn")
 
+var audio_player
+
 func _ready():
 	set_process(true)
 	OS.set_window_size(Vector2(712, 512))
 	spawn_strings()
 	
-	var player = AudioStreamPlayer.new()
-	self.add_child(player)
-	player.stream = load("res://Assets/game music/effects/ExploringMap.wav")
-	player.volume_db = -25
-	player.play()
+	audio_player = AudioStreamPlayer.new()
+	self.add_child(audio_player)
+	audio_player.stream = load("res://Assets/game music/effects/ExploringMap.wav")
+	audio_player.volume_db = -25
+	audio_player.play()
 	
 
 func spawn_strings():
@@ -30,3 +32,13 @@ func spawn_strings():
 	s2.set_position(Vector2(-240,272))
 	s3.set_position(Vector2(560,400))
 	s4.set_position(Vector2(880,400))
+	
+func play_fight_music():
+	if audio_player:
+			audio_player.stream = load("res://Assets/game music/backgroundmusic/fighting_scene.wav")
+			audio_player.play()
+			
+func play_exploration_music():
+	if audio_player:	
+		audio_player.stream = load("res://Assets/game music/effects/ExploringMap.wav")
+		audio_player.play()

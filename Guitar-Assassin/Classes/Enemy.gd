@@ -69,14 +69,17 @@ func enemy_animation():
 func _on_Visibility_body_entered(body):
 	if body.get_name() == "player":
 		sees_player = true
+		get_parent().play_fight_music()
 
 func _on_Visibility_body_exited(body):
 	if body.get_name() == "player" && spot_player_timer == 0:
 		sees_player = false
+		get_parent().play_exploration_music()
 		
 func spots_player():
 	sees_player = true
 	spot_player_timer = 15
+	get_parent().play_fight_music()
 
 func hurt_or_death_animation():
 	if hp <= 0:
