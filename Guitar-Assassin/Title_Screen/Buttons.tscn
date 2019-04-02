@@ -1,19 +1,22 @@
 [gd_scene load_steps=5 format=2]
 
 [ext_resource path="res://Title_Screen/Buttons.gd" type="Script" id=1]
-[ext_resource path="res://Assets/Chalkduster.ttf" type="DynamicFontData" id=2]
+[ext_resource path="res://Assets/montserrat/Montserrat-Bold.otf" type="DynamicFontData" id=2]
 
-[sub_resource type="StyleBoxLine" id=2]
+[sub_resource type="StyleBoxLine" id=1]
+color = Color( 0.145098, 0.172549, 0.231373, 1 )
 
-[sub_resource type="DynamicFont" id=1]
+[sub_resource type="DynamicFont" id=2]
 size = 50
+outline_size = 6
+outline_color = Color( 0.223529, 0.0313726, 0.0313726, 1 )
 font_data = ExtResource( 2 )
 
 [node name="MenuButton" type="Button"]
 margin_right = 360.0
 margin_bottom = 60.0
 rect_min_size = Vector2( 360, 60 )
-custom_styles/focus = SubResource( 2 )
+custom_styles/focus = SubResource( 1 )
 flat = true
 script = ExtResource( 1 )
 scene_to_load = "res://Game.tscn"
@@ -21,11 +24,11 @@ scene_to_load = "res://Game.tscn"
 [node name="Label" type="Label" parent="."]
 anchor_right = 1.0
 anchor_bottom = 1.0
-margin_left = 78.4985
-margin_right = 78.4985
+margin_left = 78.0
+margin_right = -56.0
 margin_bottom = 4.0
-custom_fonts/font = SubResource( 1 )
-custom_colors/font_color_shadow = Color( 0, 0, 0, 1 )
+custom_fonts/font = SubResource( 2 )
+custom_colors/font_color = Color( 0.533333, 0.270588, 0.270588, 1 )
 custom_constants/shadow_offset_x = 0
 custom_constants/shadow_offset_y = 10
 text = "START"

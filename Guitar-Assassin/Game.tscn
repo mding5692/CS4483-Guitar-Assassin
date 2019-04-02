@@ -12,7 +12,6 @@
 [ext_resource path="res://Assets/engine/Camera.tscn" type="PackedScene" id=10]
 [ext_resource path="res://Assets/wall.tres" type="TileSet" id=11]
 [ext_resource path="res://Classes/string_popup.tscn" type="PackedScene" id=12]
-[ext_resource path="res://Assets/areas/tree.tres" type="TileSet" id=13]
 
 [node name="Game" type="Node"]
 script = ExtResource( 1 )
@@ -139,18 +138,18 @@ text = "Once you've collected your abilities use them by pressing 1 2 3 4"
 [node name="TileMap" type="TileMap" parent="."]
 position = Vector2( 29.3435, 2.02454 )
 z_as_relative = false
-cell_size = Vector2( 16, 16 )
 tile_set = ExtResource( 11 )
+cell_size = Vector2( 16, 16 )
 format = 1
 tile_data = PoolIntArray( 524295, 12, 0, 524305, 12, 0, 589831, 12, 0, 589841, 12, 0, 655367, 12, 0, 655377, 12, 0, 720903, 12, 0, 720913, 12, 0, 786439, 12, 0, 786440, 12, 0, 786441, 12, 0, 786442, 12, 0, 786443, 12, 0, 786444, 12, 0, 786445, 12, 0, 786446, 12, 0, 786447, 12, 0, 786448, 12, 0, 786449, 12, 0, 851975, 12, 0, 851976, 12, 0, 851977, 12, 0, 851978, 12, 0, 851979, 12, 0, 851980, 12, 0, 851981, 12, 0, 851982, 12, 0, 851983, 12, 0, 851984, 12, 0, 851985, 12, 0, 851986, 12, 0 )
 
 [node name="string_popup" parent="." instance=ExtResource( 12 )]
 
+[node name="TileMap2" type="TileMap" parent="."]
+format = 1
+
 [connection signal="health_changed" from="Enemy2" to="Enemy2" method="_on_Character_health_changed"]
 [connection signal="health_changed" from="Boss" to="Boss" method="_on_Character_health_changed"]
 [connection signal="health_changed" from="player" to="player/Camera2D2/GUI_Container/GUI" method="_on_player_health_changed"]
-[node name="TileMap2" type="TileMap" parent="."]
-
-
 [connection signal="timeout" from="player/Camera2D2/Dialog_Box/Polygon2D/Timer" to="player/Camera2D2/Dialog_Box/Main_Text" method="_on_Timer_timeout"]
 [connection signal="health_changed" from="Enemy" to="Enemy" method="_on_Character_health_changed"]

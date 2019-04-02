@@ -3,10 +3,10 @@
 [ext_resource path="res://Assets/montserrat/Montserrat-Black.otf" type="DynamicFontData" id=1]
 [ext_resource path="res://Classes/close_button.gd" type="Script" id=2]
 
-[sub_resource type="StyleBoxLine" id=2]
+[sub_resource type="StyleBoxLine" id=1]
 color = Color( 0.172549, 0.172549, 0.196078, 1 )
 
-[sub_resource type="DynamicFont" id=1]
+[sub_resource type="DynamicFont" id=2]
 size = 20
 font_data = ExtResource( 1 )
 
@@ -32,8 +32,8 @@ margin_left = 309.567
 margin_top = 3.48666
 margin_right = 336.567
 margin_bottom = 35.4867
-custom_styles/focus = SubResource( 2 )
-custom_fonts/font = SubResource( 1 )
+custom_styles/focus = SubResource( 1 )
+custom_fonts/font = SubResource( 2 )
 text = "X"
 flat = true
 script = ExtResource( 2 )

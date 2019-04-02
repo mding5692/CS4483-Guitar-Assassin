@@ -1,12 +1,19 @@
-[gd_scene load_steps=8 format=2]
+[gd_scene load_steps=10 format=2]
 
 [ext_resource path="res://Title_Screen/Title.gd" type="Script" id=1]
-[ext_resource path="res://Assets/black.jpg" type="Texture" id=2]
-[ext_resource path="res://Assets/goodLogo.png" type="Texture" id=3]
+[ext_resource path="res://Assets/Full Moon - background.png" type="Texture" id=2]
+[ext_resource path="res://Assets/montserrat/Caveat-Bold.ttf" type="DynamicFontData" id=3]
 [ext_resource path="res://Title_Screen/Buttons.tscn" type="PackedScene" id=4]
 [ext_resource path="res://Title_Screen/QuitButton.tscn" type="PackedScene" id=5]
-[ext_resource path="res://Assets/player.jpg" type="Texture" id=6]
-[ext_resource path="res://fade_in/Fade.tscn" type="PackedScene" id=7]
+[ext_resource path="res://Assets/Sprites/warrior_m.png" type="Texture" id=6]
+[ext_resource path="res://Assets/Sprites/guitar_sprite.png" type="Texture" id=7]
+[ext_resource path="res://fade_in/Fade.tscn" type="PackedScene" id=8]
+
+[sub_resource type="DynamicFont" id=1]
+size = 100
+outline_size = 3
+outline_color = Color( 0.921569, 0.705882, 0.705882, 1 )
+font_data = ExtResource( 3 )
 
 [node name="Title" type="Control"]
 margin_right = 712.0
@@ -15,57 +22,75 @@ script = ExtResource( 1 )
 
 [node name="Sprite" type="Sprite" parent="."]
 position = Vector2( 356.25, 257.25 )
-scale = Vector2( 0.558203, 0.714583 )
+scale = Vector2( 0.371152, 0.475258 )
 texture = ExtResource( 2 )
+
+[node name="Label" type="Label" parent="."]
+margin_top = 50.0
+margin_right = 714.0
+margin_bottom = 113.0
+custom_fonts/font = SubResource( 1 )
+custom_colors/font_color = Color( 0.258824, 0.0313726, 0.0313726, 1 )
+text = "Guitar Assassin"
+align = 1
+valign = 1
 
 [node name="Menu" type="VBoxContainer" parent="."]
 anchor_right = 1.0
 anchor_bottom = 1.0
-
-[node name="Logo" type="TextureRect" parent="Menu"]
-margin_right = 712.0
-margin_bottom = 128.0
-texture = ExtResource( 3 )
-stretch_mode = 4
+margin_top = 149.0
+margin_right = 2.0
+__meta__ = {
+"_edit_lock_": true
+}
 
 [node name="CentreRow" type="HBoxContainer" parent="Menu"]
-margin_top = 132.0
-margin_right = 712.0
-margin_bottom = 512.0
+margin_right = 714.0
+margin_bottom = 363.0
 size_flags_vertical = 3
 
 [node name="Buttons" type="VBoxContainer" parent="Menu/CentreRow"]
-margin_right = 360.0
-margin_bottom = 380.0
+margin_right = 355.0
+margin_bottom = 363.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
 custom_constants/separation = 40
 alignment = 1
 
 [node name="MenuButton" parent="Menu/CentreRow/Buttons" instance=ExtResource( 4 )]
-margin_top = 110.0
-margin_bottom = 170.0
+margin_top = 101.0
+margin_right = 355.0
+margin_bottom = 161.0
+rect_min_size = Vector2( 300, 60 )
 
 [node name="QuitButton" parent="Menu/CentreRow/Buttons" instance=ExtResource( 5 )]
-margin_top = 210.0
-margin_bottom = 270.0
+margin_top = 201.0
+margin_right = 355.0
+margin_bottom = 261.0
+rect_min_size = Vector2( 300, 60 )
 script = null
 
 [node name="CenterContainer" type="CenterContainer" parent="Menu/CentreRow"]
-margin_left = 364.0
-margin_right = 712.0
-margin_bottom = 380.0
+margin_left = 359.0
+margin_right = 714.0
+margin_bottom = 363.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
 
-[node name="Guitar" type="TextureRect" parent="Menu/CentreRow/CenterContainer"]
-margin_left = 24.0
-margin_top = 40.0
-margin_right = 324.0
-margin_bottom = 339.0
+[node name="player" type="Sprite" parent="Menu/CentreRow/CenterContainer"]
+position = Vector2( 97.9771, 190.678 )
+scale = Vector2( 3.50734, 3.96791 )
 texture = ExtResource( 6 )
+vframes = 4
+hframes = 3
+frame = 7
 
-[node name="FadeIn" parent="." instance=ExtResource( 7 )]
+[node name="guitar" type="Sprite" parent="Menu/CentreRow/CenterContainer"]
+position = Vector2( 193.693, 198.215 )
+scale = Vector2( 0.254369, 0.297385 )
+texture = ExtResource( 7 )
+
+[node name="FadeIn" parent="." instance=ExtResource( 8 )]
 visible = false
 
 [connection signal="pressed" from="Menu/CentreRow/Buttons/QuitButton" to="." method="_on_QuitButton_pressed"]
