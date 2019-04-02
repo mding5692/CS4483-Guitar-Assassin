@@ -1,32 +1,29 @@
-#code from http://kidscancode.org/blog/2018/02/godot3_kinematic2d/
 extends KinematicBody2D
 
 var type = "bullet"
 
-var speed = 350
+var speed = 0
 var velocity = Vector2()
-var bullet_bounce = 0
+var damage = 0
 
 func bullet_start_position(pos, dir):
 	rotation = dir
 	position = pos
-	velocity = Vector2(speed, 0).rotated(rotation)
 
 func _physics_process(delta):
+	velocity = Vector2(speed, 0).rotated(rotation)
 	var collision = move_and_collide(velocity * delta)
 	if collision:
 		if collision.collider.get_name() != "TileMap":
 			if collision.collider.type != "bullet":
 				var hurt_character = get_parent().get_node(collision.collider.get_name())
-				hurt_character.hp -= 1
+				hurt_character.hp -= damage
+				print(damage)
 				if hurt_character.type == "Enemy" || hurt_character.type == "Boss":
 					hurt_character.spots_player()
 					hurt_character.hurt_or_death_animation()
 				elif hurt_character.type == "Player":
-					hurt_character.player_is_hurt = true			
+					hurt_character.player_is_hurt = true
 			queue_free()
 		else:
-			velocity = velocity.bounce(collision.normal)
-			bullet_bounce += 1
-			if bullet_bounce == 2:
-				queue_free()
+			queue_free()

@@ -79,7 +79,7 @@ func spots_player():
 	spot_player_timer = 15
 
 func hurt_or_death_animation():
-	if hp == 0:
+	if hp <= 0:
 		queue_free()
 	else:
 		hurt_timer = 2

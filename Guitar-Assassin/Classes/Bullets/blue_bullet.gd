@@ -1,4 +1,5 @@
 extends "res://Classes/Bullets/bullet.gd"
 
 func _ready():
-	pass
+	speed = 200
+	damage = 5

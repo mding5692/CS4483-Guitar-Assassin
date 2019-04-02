@@ -19,7 +19,7 @@ var hurt_timer = 0
 
 func _ready():
 	type = "Player"
-	hp = 5
+	hp = 10
 
 func _process(delta):
 	if hurt_timer > 0:
