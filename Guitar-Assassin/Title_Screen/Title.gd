@@ -11,7 +11,7 @@ func _ready():
 	
 	self.add_child(player)
 	player.stream = load("res://Assets/game music/backgroundmusic/Intro.wav")
-	player.volume_db = -05
+	player.volume_db = -25
 	player.play()
  
 func _on_Button_pressed(scene_to_load):
