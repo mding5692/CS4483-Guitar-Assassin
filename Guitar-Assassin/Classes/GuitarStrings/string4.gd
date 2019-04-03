@@ -14,4 +14,4 @@ func _on_string4_body_entered(body):
 		p.get_child(0).text = "Green string found. Causes 20 damage points. \n\nPress 4 to use."
 		p.popup_centered()
 		queue_free()
-		get_tree().paused = true
+

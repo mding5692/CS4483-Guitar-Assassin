@@ -1,0 +1,29 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://Assets/ending.jpg" type="Texture" id=1]
+[ext_resource path="res://ending.gd" type="Script" id=2]
+
+[node name="Node2D" type="Node2D"]
+
+[node name="ending" type="Sprite" parent="."]
+position = Vector2( 356, 256 )
+scale = Vector2( 0.370833, 0.563396 )
+texture = ExtResource( 1 )
+script = ExtResource( 2 )
+
+[node name="RichTextLabel" type="RichTextLabel" parent="ending"]
+margin_left = -448.851
+margin_top = -281.801
+margin_right = 473.149
+margin_bottom = 251.199
+custom_colors/default_color = Color( 0.0313726, 0.141176, 0.329412, 1 )
+bbcode_enabled = true
+bbcode_text = "Now you learn how to use Guitar's abilities. 
+The new journey awaits ahead.
+Go for it!
+Show the world the BEST Guitar Assassin"
+text = "Now you learn how to use Guitar's abilities. 
+The new journey awaits ahead.
+Go for it!
+Show the world the BEST Guitar Assassin"
+
