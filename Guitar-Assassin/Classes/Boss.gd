@@ -13,6 +13,19 @@ func use_weapon():
 func weapon_direction():
 	pass
 
+func change_to_player_direction():
+	if move_direction.x < 0:
+		direction = 'left'
+	elif move_direction.x > 0:
+		direction = 'right'
+		
+	if move_direction.y < 0 && move_direction.y < move_direction.x:
+		direction = 'up'
+	elif move_direction.y > 0 && move_direction.y > move_direction.x:
+		direction = 'down'
+		
+	enemy_animation()
+
 func spots_player():
 	if !sees_player:
 		sees_player = true
