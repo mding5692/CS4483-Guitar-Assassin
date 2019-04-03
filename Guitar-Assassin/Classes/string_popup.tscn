@@ -1,14 +1,9 @@
-[gd_scene load_steps=5 format=2]
+[gd_scene load_steps=3 format=2]
 
-[ext_resource path="res://Assets/montserrat/Montserrat-Black.otf" type="DynamicFontData" id=1]
-[ext_resource path="res://Classes/close_button.gd" type="Script" id=2]
+[ext_resource path="res://Classes/close_button.gd" type="Script" id=1]
 
 [sub_resource type="StyleBoxLine" id=1]
-color = Color( 0.172549, 0.172549, 0.196078, 1 )
-
-[sub_resource type="DynamicFont" id=2]
-size = 20
-font_data = ExtResource( 1 )
+color = Color( 0.192157, 0.196078, 0.219608, 1 )
 
 [node name="string_popup" type="CanvasLayer"]
 pause_mode = 2
@@ -21,21 +16,28 @@ margin_right = 449.0
 margin_bottom = 289.0
 
 [node name="string_label" type="Label" parent="string_pop"]
-margin_left = 19.1053
-margin_top = 19.5263
-margin_right = 299.105
-margin_bottom = 64.5263
+margin_left = 19.0
+margin_top = 20.0
+margin_right = 281.0
+margin_bottom = 65.0
+valign = 1
+
+[node name="Label" type="Label" parent="string_pop"]
+margin_left = 263.713
+margin_top = 60.4614
+margin_right = 330.713
+margin_bottom = 89.4614
+text = "ESC to exit"
+align = 1
 valign = 1
 
 [node name="close_button" type="Button" parent="string_pop"]
-margin_left = 309.567
-margin_top = 3.48666
-margin_right = 336.567
-margin_bottom = 35.4867
+margin_left = 316.0
+margin_top = 4.0
+margin_right = 337.0
+margin_bottom = 25.0
 custom_styles/focus = SubResource( 1 )
-custom_fonts/font = SubResource( 2 )
-text = "X"
 flat = true
-script = ExtResource( 2 )
+script = ExtResource( 1 )
 
 [connection signal="pressed" from="string_pop/close_button" to="string_pop/close_button" method="_on_close_button_pressed"]
