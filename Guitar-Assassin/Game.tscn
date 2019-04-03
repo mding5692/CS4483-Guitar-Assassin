@@ -1,8 +1,8 @@
 [gd_scene load_steps=15 format=2]
 
 [ext_resource path="res://Game.gd" type="Script" id=1]
-[ext_resource path="res://Classes/NPC.tscn" type="PackedScene" id=2]
-[ext_resource path="res://Classes/Enemy.tscn" type="PackedScene" id=3]
+[ext_resource path="res://Classes/Enemy.tscn" type="PackedScene" id=2]
+[ext_resource path="res://Classes/NPC.tscn" type="PackedScene" id=3]
 [ext_resource path="res://Classes/Boss.tscn" type="PackedScene" id=4]
 [ext_resource path="res://Classes/player.tscn" type="PackedScene" id=5]
 [ext_resource path="res://Dialog_Box.gd" type="Script" id=6]
@@ -21,10 +21,13 @@ __meta__ = {
 "_edit_vertical_guides_": [  ]
 }
 
-[node name="Kaughtabaw" parent="." instance=ExtResource( 2 )]
-position = Vector2( 793.657, 450.345 )
+[node name="Enemy11" parent="." instance=ExtResource( 2 )]
+position = Vector2( 170.414, 322.973 )
 
-[node name="Enemy2" parent="." instance=ExtResource( 3 )]
+[node name="Kaughtabaw" parent="." instance=ExtResource( 3 )]
+position = Vector2( 807.387, 473.686 )
+
+[node name="Enemy2" parent="." instance=ExtResource( 2 )]
 position = Vector2( -310.327, 319.345 )
 
 [node name="Boss" parent="." instance=ExtResource( 4 )]
@@ -97,8 +100,8 @@ margin_right = 177.0
 margin_bottom = -171.0
 script = ExtResource( 9 )
 
-[node name="Enemy" parent="." instance=ExtResource( 3 )]
-position = Vector2( 251.007, 271.291 )
+[node name="Enemy" parent="." instance=ExtResource( 2 )]
+position = Vector2( 378.696, 328.957 )
 
 [node name="Instruction_group" type="Node2D" parent="."]
 position = Vector2( 704, 656 )
@@ -117,7 +120,7 @@ margin_top = 32.0
 margin_right = 248.0
 margin_bottom = 80.0
 bbcode_text = "Collect strings (abilities) by walking over them"
-text = "Press P to pause the game"
+text = "Collect strings (abilities) by walking over them"
 
 [node name="Attack_instructions" type="RichTextLabel" parent="Instruction_group"]
 visible = false
@@ -159,6 +162,30 @@ format = 1
 tile_data = PoolIntArray( -262152, 5, 0, -196613, 0, 0, -196599, 0, 0, 1, 3, 0, 65543, 1, 0, 65548, 0, 0, 458756, 5, 0, 458762, 0, 0, 524303, 3, 0, 589827, 1, 0, 720904, 11, 0, 720910, 1, 0, 786442, 10, 0 )
 
 [node name="pause" parent="." instance=ExtResource( 14 )]
+
+[node name="Enemy4" parent="." instance=ExtResource( 2 )]
+position = Vector2( 206.322, -157.779 )
+
+[node name="Enemy3" parent="." instance=ExtResource( 2 )]
+position = Vector2( -8.25082, -167.079 )
+
+[node name="Enemy6" parent="." instance=ExtResource( 2 )]
+position = Vector2( -429.314, -57.0744 )
+
+[node name="Enemy5" parent="." instance=ExtResource( 2 )]
+position = Vector2( 141.419, 609.613 )
+
+[node name="Enemy9" parent="." instance=ExtResource( 2 )]
+position = Vector2( -458.147, 269.7 )
+
+[node name="Enemy8" parent="." instance=ExtResource( 2 )]
+position = Vector2( -217.871, 198.304 )
+
+[node name="Enemy7" parent="." instance=ExtResource( 2 )]
+position = Vector2( -505.265, 145.538 )
+
+[node name="Enemy10" parent="." instance=ExtResource( 2 )]
+position = Vector2( 304.807, 568.423 )
 
 [connection signal="health_changed" from="Enemy2" to="Enemy2" method="_on_Character_health_changed"]
 [connection signal="health_changed" from="Boss" to="Boss" method="_on_Character_health_changed"]
