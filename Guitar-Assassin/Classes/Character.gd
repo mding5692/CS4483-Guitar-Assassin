@@ -61,5 +61,4 @@ func damage(delta):
 		bounce_direction = Vector2(0,0)
 
 func _on_Character_health_changed():
-#	pass # Replace with function body.
 	get_node("/root/Game/player").up

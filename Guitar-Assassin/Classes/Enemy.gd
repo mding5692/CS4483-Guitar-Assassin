@@ -85,11 +85,6 @@ func spots_player():
 	if !sees_player:
 		sees_player = true
 		player_target.enemies_who_seen_player[self.get_name()] = true
-#		spot_player_timer = Timer.new()
-#		spot_player_timer.connect("timeout",self,"_on_timer_timeout")
-#		get_parent().add_child(spot_player_timer)
-#		spot_player_timer.set_wait_time(5.0)
-#		spot_player_timer.start() 
 		get_parent().play_fight_music()
 
 func hurt_or_death_animation():
@@ -104,13 +99,6 @@ func hurt_or_death_animation():
 
 func _on_timer_timeout():
 	pass
-#	spot_player_timer.stop()
-#	get_parent().remove_child(spot_player_timer)
 
 func use_weapon():
-	pass
-#	$Weapon/Sprite.visible = true
-#	if direction == "left" || direction == "up":
-#		$Weapon/anim.play("swingup")	
-#	elif direction == "right" || direction == "down":
-#		$Weapon/anim.play("swingright")			
+	pass	
