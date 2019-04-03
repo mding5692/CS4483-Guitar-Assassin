@@ -17,9 +17,9 @@ var hurt_timer = 0
 func _ready():
 	$Katana_right.visible = false
 	$Katana_left.visible = false
-	hp = 50
+	hp = 25
 	type = "Enemy"
-	speed = 25
+	speed = 40
 	randomize()
 
 func _process(delta):
