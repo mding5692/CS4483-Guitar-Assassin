@@ -23,13 +23,6 @@ func _ready():
 	randomize()
 
 func _process(delta):
-#	if spot_player_timer > 0:
-#		sees_player = true
-#		spot_player_timer -= 1
-#	elif spot_player_timer == 0:
-#		pass
-#		get_parent().play_exploration_music()
-		
 	if hurt_timer > 0:
 		$Sprite.self_modulate = Color(1, 0, 0)
 		hurt_timer -= 1

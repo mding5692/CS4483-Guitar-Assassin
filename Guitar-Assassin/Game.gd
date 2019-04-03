@@ -45,5 +45,5 @@ func play_exploration_music():
 		
 func play_boss_music():
 	if audio_player:
-		audio_player.stream = load("res://Assets/game music/effects/ExploringMap.wav")
+		audio_player.stream = load("res://Assets/game music/backgroundmusic/Boss Fighting.wav")
 		audio_player.play()
