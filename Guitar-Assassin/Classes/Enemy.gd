@@ -19,7 +19,7 @@ func _ready():
 	$Katana_left.visible = false
 	hp = 50
 	type = "Enemy"
-	speed = 50
+	speed = 25
 	randomize()
 
 func _process(delta):
