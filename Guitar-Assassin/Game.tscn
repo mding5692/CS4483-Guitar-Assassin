@@ -82,7 +82,7 @@ margin_left = 459.0
 margin_top = 417.0
 margin_right = 578.0
 margin_bottom = 434.0
-bbcode_text = "Press ESC to skip."
+bbcode_text = "Press ESC to skip"
 text = "Press ESC to skip"
 
 [node name="GUI_Container" type="Node2D" parent="player/Camera2D2"]
