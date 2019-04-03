@@ -19,7 +19,6 @@ func _physics_process(delta):
 			if collision.collider.type != "bullet":
 				var hurt_character = get_parent().get_node(node_name)
 				hurt_character.hp -= damage
-				print(damage)
 				if hurt_character.type == "Enemy" || hurt_character.type == "Boss":
 					hurt_character.spots_player()
 					hurt_character.hurt_or_death_animation()

@@ -5,7 +5,7 @@ const animation = "walk"
 
 # For raycasting and figuring if player is seen
 var sees_player = false
-var spot_player_timer = 0
+var spot_player_timer 
 onready var player_target = get_parent().get_node("player")
 
 # For handling how much time it talks to walk
@@ -23,12 +23,6 @@ func _ready():
 	randomize()
 
 func _process(delta):
-	if spot_player_timer > 0:
-		sees_player = true
-		spot_player_timer -= 1
-	elif spot_player_timer == 0:
-		get_parent().play_exploration_music()
-		
 	if hurt_timer > 0:
 		$Sprite.self_modulate = Color(1, 0, 0)
 		hurt_timer -= 1
@@ -88,16 +82,27 @@ func _on_Visibility_body_exited(body):
 	pass
 		
 func spots_player():
-	sees_player = true
-	spot_player_timer = 15
-	get_parent().play_fight_music()
+	if !sees_player:
+		sees_player = true
+		spot_player_timer = Timer.new()
+		spot_player_timer.connect("timeout",self,"_on_timer_timeout")
+		get_parent().add_child(spot_player_timer)
+		spot_player_timer.set_wait_time(5.0)
+		spot_player_timer.start() 
+		get_parent().play_fight_music()
 
 func hurt_or_death_animation():
 	if hp <= 0:
 		queue_free()
 	else:
 		hurt_timer = 2
-		
+
+func _on_timer_timeout():
+	spot_player_timer.stop()
+	get_parent().remove_child(spot_player_timer)
+	sees_player = false
+	get_parent().play_exploration_music()
+
 func use_weapon():
 	pass
 #	$Weapon/Sprite.visible = true

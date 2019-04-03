@@ -13,7 +13,31 @@ func use_weapon():
 func weapon_direction():
 	pass
 
+func change_to_player_direction():
+	if move_direction.x < 0:
+		direction = 'left'
+	elif move_direction.x > 0:
+		direction = 'right'
+		
+	if move_direction.y < 0 && move_direction.y < move_direction.x:
+		direction = 'up'
+	elif move_direction.y > 0 && move_direction.y > move_direction.x:
+		direction = 'down'
+		
+	enemy_animation()
+
 func spots_player():
-	sees_player = true
-	spot_player_timer = 15
-	get_parent().play_boss_music()
+	if !sees_player:
+		sees_player = true
+		spot_player_timer = Timer.new()
+		spot_player_timer.connect("timeout",self,"_on_timer_timeout")
+		get_parent().add_child(spot_player_timer)
+		spot_player_timer.set_wait_time(5.0)
+		spot_player_timer.start() 
+		get_parent().play_boss_music()
+		
+func _on_timer_timeout():
+	spot_player_timer.stop()
+	get_parent().remove_child(spot_player_timer)
+	sees_player = false
+	get_parent().play_exploration_music()
