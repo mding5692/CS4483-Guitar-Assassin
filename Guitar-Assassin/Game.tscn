@@ -149,7 +149,7 @@ tile_data = PoolIntArray( -1310757, 0, 0, -1310756, 0, 0, -1310755, 0, 0, -13107
 [node name="TileMap2" type="TileMap" parent="."]
 tile_set = ExtResource( 13 )
 format = 1
-tile_data = PoolIntArray( -262152, 5, 0, -196613, 0, 0, -196599, 0, 0, 1, 3, 0, 65543, 1, 0, 65548, 0, 0, 196601, 4, 0, 196605, 10, 0, 458756, 5, 0, 458762, 0, 0, 524303, 3, 0, 589827, 1, 0, 720904, 11, 0, 720910, 1, 0, 786442, 10, 0 )
+tile_data = PoolIntArray( -262152, 5, 0, -196613, 0, 0, -196599, 0, 0, 1, 3, 0, 65543, 1, 0, 65548, 0, 0, 458756, 5, 0, 458762, 0, 0, 524303, 3, 0, 589827, 1, 0, 720904, 11, 0, 720910, 1, 0, 786442, 10, 0 )
 
 [connection signal="health_changed" from="Enemy2" to="Enemy2" method="_on_Character_health_changed"]
 [connection signal="health_changed" from="Boss" to="Boss" method="_on_Character_health_changed"]

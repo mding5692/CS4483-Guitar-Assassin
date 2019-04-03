@@ -21,10 +21,10 @@ margin_right = 449.0
 margin_bottom = 289.0
 
 [node name="string_label" type="Label" parent="string_pop"]
-margin_left = 17.0
-margin_top = 9.0
-margin_right = 297.0
-margin_bottom = 54.0
+margin_left = 19.1053
+margin_top = 19.5263
+margin_right = 299.105
+margin_bottom = 64.5263
 valign = 1
 
 [node name="close_button" type="Button" parent="string_pop"]

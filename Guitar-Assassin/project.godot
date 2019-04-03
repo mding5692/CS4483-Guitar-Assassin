@@ -74,5 +74,5 @@ shoot4={
 
 [rendering]
 
-environment/default_clear_color=Color( 0.0643311, 0.0962896, 0.242188, 1 )
+environment/default_clear_color=Color( 0.027451, 0.254902, 0.0117647, 1 )
 environment/default_environment="res://default_env.tres"
