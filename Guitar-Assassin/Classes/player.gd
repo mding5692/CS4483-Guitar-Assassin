@@ -15,6 +15,8 @@ var string4_ability = false
 var player_is_hurt = false
 var hurt_timer = 0
 
+var enemies_who_seen_player = {}
+
 var max_health = 10
 var timer = null
 var bullet_delay = 0.5

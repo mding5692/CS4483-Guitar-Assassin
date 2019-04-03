@@ -84,24 +84,28 @@ func _on_Visibility_body_exited(body):
 func spots_player():
 	if !sees_player:
 		sees_player = true
-		spot_player_timer = Timer.new()
-		spot_player_timer.connect("timeout",self,"_on_timer_timeout")
-		get_parent().add_child(spot_player_timer)
-		spot_player_timer.set_wait_time(5.0)
-		spot_player_timer.start() 
+		player_target.enemies_who_seen_player[self.get_name()] = true
+#		spot_player_timer = Timer.new()
+#		spot_player_timer.connect("timeout",self,"_on_timer_timeout")
+#		get_parent().add_child(spot_player_timer)
+#		spot_player_timer.set_wait_time(5.0)
+#		spot_player_timer.start() 
 		get_parent().play_fight_music()
 
 func hurt_or_death_animation():
 	if hp <= 0:
+		sees_player = false
+		player_target.enemies_who_seen_player.erase(self.get_name())
+		if player_target.enemies_who_seen_player.size() == 0:
+			get_parent().play_exploration_music()
 		queue_free()
 	else:
 		hurt_timer = 2
 
 func _on_timer_timeout():
-	spot_player_timer.stop()
-	get_parent().remove_child(spot_player_timer)
-	sees_player = false
-	get_parent().play_exploration_music()
+	pass
+#	spot_player_timer.stop()
+#	get_parent().remove_child(spot_player_timer)
 
 func use_weapon():
 	pass
