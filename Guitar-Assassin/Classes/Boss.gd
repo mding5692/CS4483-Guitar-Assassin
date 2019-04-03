@@ -1,9 +1,9 @@
 extends "res://Classes/Enemy.gd"
 
 func _ready():
-	hp = 200
+	hp = 300
 	type = "Boss"
-	speed = 30
+	speed = 55
 	$Katana_left.visible = false
 	$Katana_right.visible = false
 

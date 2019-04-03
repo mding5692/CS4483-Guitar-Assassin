@@ -31,7 +31,6 @@ position = Vector2( -310.327, 319.345 )
 position = Vector2( 301.716, -126.771 )
 
 [node name="player" parent="." instance=ExtResource( 5 )]
-editor/display_folded = true
 position = Vector2( 812.681, 720 )
 
 [node name="Camera2D2" type="Camera2D" parent="player"]
@@ -84,7 +83,7 @@ margin_top = 417.0
 margin_right = 578.0
 margin_bottom = 434.0
 bbcode_text = "Press ESC to skip."
-text = "Press ESC to skip."
+text = "Press ESC to skip"
 
 [node name="GUI_Container" type="Node2D" parent="player/Camera2D2"]
 position = Vector2( -104.763, -77.3582 )
@@ -111,14 +110,14 @@ margin_bottom = 16.0
 bbcode_text = "Press ARROW KEYS to move around"
 text = "Press ARROW KEYS to move around"
 
-[node name="Ability_instructions" type="RichTextLabel" parent="Instruction_group"]
+[node name="Pause_instructions" type="RichTextLabel" parent="Instruction_group"]
 visible = false
-margin_left = 273.0
-margin_top = -256.0
-margin_right = 464.0
-margin_bottom = -203.0
+margin_left = 31.0
+margin_top = 32.0
+margin_right = 248.0
+margin_bottom = 80.0
 bbcode_text = "Collect strings (abilities) by walking over them"
-text = "Collect strings (abilities) by walking over them"
+text = "Press P to pause the game"
 
 [node name="Attack_instructions" type="RichTextLabel" parent="Instruction_group"]
 visible = false
@@ -128,6 +127,13 @@ margin_right = 240.0
 margin_bottom = -496.0
 bbcode_text = "Once you've collected your abilities use them by pressing 1 2 3 4"
 text = "Once you've collected your abilities use them by pressing 1 2 3 4"
+
+[node name="Pause_instruction" type="RichTextLabel" parent="Instruction_group"]
+margin_left = 32.0
+margin_top = 32.0
+margin_right = 272.0
+margin_bottom = 80.0
+text = "Press P to pause the game"
 
 [node name="Sprite" type="Sprite" parent="."]
 

@@ -15,7 +15,7 @@ func _ready():
 	audio_player = AudioStreamPlayer.new()
 	self.add_child(audio_player)
 	audio_player.stream = load("res://Assets/game music/effects/ExploringMap.wav")
-	audio_player.volume_db = -25
+	audio_player.volume_db = -05
 	audio_player.play()
 	
 	$pause/pause/ColorRect.visible = false
