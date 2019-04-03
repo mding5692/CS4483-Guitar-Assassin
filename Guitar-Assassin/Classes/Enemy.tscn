@@ -6,7 +6,7 @@
 [ext_resource path="res://Classes/weapons/weapon.tscn" type="PackedScene" id=4]
 
 [sub_resource type="CircleShape2D" id=1]
-radius = 120.0
+radius = 250.0
 
 [node name="Enemy" index="0" instance=ExtResource( 1 )]
 script = ExtResource( 2 )

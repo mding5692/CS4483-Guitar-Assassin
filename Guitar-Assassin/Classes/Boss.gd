@@ -1,7 +1,8 @@
+
 extends "res://Classes/Enemy.gd"
 
 func _ready():
-	hp = 50
+	hp = 200
 	type = "Boss"
 	speed = 30
 	$Katana_left.visible = false
@@ -29,19 +30,20 @@ func change_to_player_direction():
 func spots_player():
 	if !sees_player:
 		sees_player = true
-		spot_player_timer = Timer.new()
-		spot_player_timer.connect("timeout",self,"_on_timer_timeout")
-		get_parent().add_child(spot_player_timer)
-		spot_player_timer.set_wait_time(5.0)
-		spot_player_timer.start() 
+		player_target.enemies_who_seen_player[self.get_name()] = true
+#		sees_player = true
+#		spot_player_timer = Timer.new()
+#		spot_player_timer.connect("timeout",self,"_on_timer_timeout")
+#		get_parent().add_child(spot_player_timer)
+#		spot_player_timer.set_wait_time(5.0)
+#		spot_player_timer.start() 
 		get_parent().play_boss_music()
 		
-func _on_timer_timeout():
-	spot_player_timer.stop()
-	get_parent().remove_child(spot_player_timer)
-	sees_player = false
-	get_parent().play_exploration_music()
-	
+#func _on_timer_timeout():
+#	spot_player_timer.stop()
+#	get_parent().remove_child(spot_player_timer)
+#	sees_player = false
+#	get_parent().play_exploration_music()
 func hurt_or_death_animation():
 	if hp <= 0:
 		queue_free()

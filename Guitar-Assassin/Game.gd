@@ -18,6 +18,12 @@ func _ready():
 	audio_player.volume_db = -25
 	audio_player.play()
 	
+	$pause/pause/ColorRect.visible = false
+
+func _process(delta):
+	if Input.is_action_pressed("pause"):
+		get_tree().paused = true
+		$pause/pause/ColorRect.visible = true
 
 func spawn_strings():
 	var s1 = string1.instance()
