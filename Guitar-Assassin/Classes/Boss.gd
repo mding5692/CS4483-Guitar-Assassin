@@ -41,3 +41,10 @@ func _on_timer_timeout():
 	get_parent().remove_child(spot_player_timer)
 	sees_player = false
 	get_parent().play_exploration_music()
+	
+func hurt_or_death_animation():
+	if hp <= 0:
+		queue_free()
+		get_tree().change_scene("res://Ending.tscn")
+	else:
+		hurt_timer = 2
